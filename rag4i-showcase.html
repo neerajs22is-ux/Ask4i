@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#050608]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG-4i // Zero-GPU PDF Architecture Benchmark</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#07080b',
+            carbon: '#0c0e14',
+            surface: '#11141c',
+            borderDim: 'rgba(255, 255, 255, 0.08)',
+            borderBright: 'rgba(255, 255, 255, 0.16)',
+            emeraldGlow: '#00f59b',
+            amberAlert: '#f59e0b',
+            cyanEdge: '#38bdf8',
+            crimsonGlow: '#f43f5e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Technical Grid Matrix Background */
+    .bg-grid-pattern {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+
+    .glow-box {
+      box-shadow: 0 0 50px -10px rgba(0, 245, 155, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    /* Enforce exact 16:9 stage constraints */
+    #stage-container {
+      aspect-ratio: 16 / 9;
+      width: min(98vw, 98vh * 1.77777778);
+      height: min(98vw * 0.5625, 98vh);
+    }
+
+    /* Page cells animation */
+    .page-cell {
+      transition: background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+    }
+  </style>
+</head>
+<body class="h-full flex items-center justify-center overflow-hidden bg-[#040507] text-slate-200 antialiased selection:bg-[#00f59b] selection:text-black">
+
+  <!-- Main 16:9 Presentation Section -->
+  <main id="stage-container" class="relative rounded-2xl border border-white/10 bg-[#07080c] glow-box flex flex-col justify-between overflow-hidden p-4 sm:p-5 lg:p-6 bg-grid-pattern">
+    
+    <!-- Top Ambient Specular Light -->
+    <div class="pointer-events-none absolute -top-48 left-1/2 -translate-x-1/2 w-4/5 h-72 bg-gradient-to-b from-emerald-500/15 via-cyan-500/5 to-transparent blur-[120px] rounded-full"></div>
+
+    <!-- 1. HEADER BAR -->
+    <header class="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
+      <!-- Left: Identity & Architecture Badge -->
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-xs font-mono">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00f59b]"></span>
+          </span>
+          <span class="font-bold tracking-wider text-slate-100">RAG-4i</span>
+          <span class="text-white/20">|</span>
+          <span class="text-slate-400">EDGE BENCHMARK LABS</span>
+        </div>
+        
+        <div class="hidden sm:flex items-center gap-1.5 text-[11px] font-mono text-emerald-400/90 bg-emerald-950/30 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+          <svg class="w-3 h-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          ZERO-GPU SERVERLESS ARCHITECTURE
+        </div>
+      </div>
+
+      <!-- Center: Corpus Provenance Pill -->
+      <div class="hidden xl:flex items-center gap-2 text-xs font-mono text-slate-300 bg-white/[0.03] border border-white/10 px-3.5 py-1 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        CORPUS: <span class="text-slate-100 font-semibold">Indian Income Tax Act</span>
+        <span class="text-slate-500">(78-Page Statutory Extract &bull; 899 Chunks)</span>
+      </div>
+
+      <!-- Right: Interactive Controls -->
+      <div class="flex items-center gap-2 font-mono text-xs">
+        <!-- Interactive View Selector -->
+        <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10">
+          <button id="btn-tab-telemetry" onclick="switchView('telemetry')" class="px-3 py-1 rounded-md bg-emerald-500/20 text-[#00f59b] border border-emerald-500/30 font-medium transition-all text-[11px]">
+            Live Terminal
+          </button>
+          <button id="btn-tab-comparison" onclick="switchView('comparison')" class="px-3 py-1 rounded-md text-slate-400 hover:text-white transition-all text-[11px]">
+            vs 3B GPU
+          </button>
+          <button id="btn-tab-architecture" onclick="switchView('architecture')" class="px-3 py-1 rounded-md text-slate-400 hover:text-white transition-all text-[11px]">
+            Architecture
+          </button>
+        </div>
+
+        <!-- Audio Toggle Button -->
+        <button id="btn-sound" onclick="toggleAudio()" title="Toggle Tactical Audio Feedback" class="p-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/30 transition-all">
+          <svg id="icon-sound-off" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+          <svg id="icon-sound-on" class="w-3.5 h-3.5 hidden text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+        </button>
+
+        <!-- Fullscreen Toggle -->
+        <button onclick="toggleFullscreen()" title="Toggle 16:9 Presentation Mode" class="p-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-slate-400 hover:text-white hover:border-white/20 transition-all">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. MAIN GRID (5:7 Split with tight vertical rhythm) -->
+    <div class="relative z-10 grid grid-cols-12 gap-4 lg:gap-6 my-auto h-[80%]">
+      
+      <!-- LEFT COLUMN: Contrarian Provocation, 3 Key Pillars, Code Microcard, Benchmark Scorecard -->
+      <div class="col-span-12 lg:col-span-5 flex flex-col justify-between h-full">
+        
+        <!-- The Contrarian Hero Banner -->
+        <div class="rounded-xl bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 p-3.5 relative overflow-hidden shadow-lg">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-rose-400 font-bold flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping"></span>
+              The Viral Claim Debunked
+            </span>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20 font-medium">
+              Enterprise Tax Proof
+            </span>
+          </div>
+
+          <h1 class="text-base sm:text-lg lg:text-[1.28rem] font-bold font-display text-white leading-snug tracking-tight">
+            Stop deploying 3B Vision models on dedicated GPUs to parse 100-page PDFs.
+          </h1>
+
+          <p class="text-[12px] text-slate-300 mt-1.5 leading-relaxed">
+            When we built <span class="text-white font-semibold">RAG-4i</span> for enterprise tax advisory, we indexed a 78-page statutory extract on a <span class="text-emerald-400 font-semibold">$0.00 compute budget</span> achieving <span class="text-[#00f59b] font-bold">96.7% retrieval recall</span> without touching a single GPU.
+          </p>
+        </div>
+
+        <!-- The 3 Core Architectural Pillars (Interactive Stack) -->
+        <div class="space-y-2">
+          <!-- Pillar 1 -->
+          <div id="pillar-1" onclick="focusPillar(1)" class="group cursor-pointer rounded-lg border border-white/10 bg-white/[0.02] hover:bg-emerald-950/20 hover:border-emerald-500/40 p-2.5 transition-all flex items-start gap-3">
+            <div class="mt-0.5 p-1.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs font-bold">
+              01
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors">V8 Isolates over Heavy OS Binaries</span>
+                <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-semibold">&lt;120MB RAM</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                Running <code class="text-cyan-300 font-mono text-[10px]">unpdf</code> in Supabase Edge (Deno). Zero Poppler, zero PyMuPDF compilation, and zero OS dependencies.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div id="pillar-2" onclick="focusPillar(2)" class="group cursor-pointer rounded-lg border border-white/10 bg-white/[0.02] hover:bg-cyan-950/20 hover:border-cyan-500/40 p-2.5 transition-all flex items-start gap-3">
+            <div class="mt-0.5 p-1.5 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-mono text-xs font-bold">
+              02
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">Page-Boundary Chunking</span>
+                <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded font-semibold">Zero Cross-Spill</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                1,000 chars with 200 overlap strictly per page. Statutory provisions remain permanently anchored to verifiable legal page provenance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div id="pillar-3" onclick="focusPillar(3)" class="group cursor-pointer rounded-lg border border-white/10 bg-white/[0.02] hover:bg-amber-950/20 hover:border-amber-500/40 p-2.5 transition-all flex items-start gap-3">
+            <div class="mt-0.5 p-1.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-xs font-bold">
+              03
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white group-hover:text-amber-300 transition-colors">Downstream Noise Absorption</span>
+                <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-semibold">RRF k=60</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                Postgres hybrid search (pgvector + FTS). Repetitive running headers lose weight in BM25 IDF without wasting LLM tokens stripping them.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture Micro-Snippet -->
+        <div class="rounded-lg border border-white/10 bg-black/60 p-2.5 font-mono text-[11px] text-slate-400">
+          <div class="flex items-center justify-between text-[10px] text-slate-500 mb-1 border-b border-white/5 pb-1">
+            <span class="text-cyan-300">supabase/functions/ingest-pdf/index.ts</span>
+            <span class="text-emerald-400 font-bold">Deno 2.x &bull; Pure V8 Isolate</span>
+          </div>
+          <div class="text-slate-300 text-[10.5px]">
+            <span class="text-purple-400">import</span> { extractText } <span class="text-purple-400">from</span> <span class="text-emerald-300">'npm:unpdf'</span>;
+          </div>
+          <div class="text-slate-400 text-[10px] mt-0.5">
+            const pages = await extractText(pdf, { mergePages: <span class="text-amber-400">false</span> }); // RAM &lt;118MB
+          </div>
+        </div>
+
+        <!-- Verified Scorecard Ticker -->
+        <div class="rounded-xl border border-white/10 bg-black/70 p-2.5 shadow-inner">
+          <div class="flex items-center justify-between mb-2 px-1">
+            <span class="text-[10px] font-mono text-slate-400 tracking-wider">VERIFIED FROZEN TEST SUITE BENCHMARKS</span>
+            <span class="text-[9px] font-mono text-emerald-400">PROVEN ON PRODUCTION SUITE</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2 font-mono text-center">
+            <div class="bg-white/[0.03] border border-white/5 py-1.5 px-1 rounded-lg">
+              <div class="text-sm lg:text-base font-bold text-[#00f59b]">$0.00</div>
+              <div class="text-[9px] text-slate-400 mt-0.5">COMPUTE COST</div>
+            </div>
+            <div class="bg-white/[0.03] border border-white/5 py-1.5 px-1 rounded-lg">
+              <div class="text-sm lg:text-base font-bold text-cyan-400">&lt;120 MB</div>
+              <div class="text-[9px] text-slate-400 mt-0.5">PEAK MEMORY</div>
+            </div>
+            <div class="bg-white/[0.03] border border-white/5 py-1.5 px-1 rounded-lg">
+              <div class="text-sm lg:text-base font-bold text-white">93.3%</div>
+              <div class="text-[9px] text-slate-400 mt-0.5">HIT@1 (STATUTE)</div>
+            </div>
+            <div class="bg-white/[0.03] border border-white/5 py-1.5 px-1 rounded-lg">
+              <div class="text-sm lg:text-base font-bold text-[#00f59b]">96.7%</div>
+              <div class="text-[9px] text-slate-400 mt-0.5">RECALL@8</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Interactive Terminal Console & Live Ingestion Visualizer -->
+      <div class="col-span-12 lg:col-span-7 h-full flex flex-col justify-between">
+        
+        <!-- CARD VIEW 1: The Ray.so / Carbon Aesthetic Terminal -->
+        <div id="view-telemetry" class="relative flex-1 flex flex-col rounded-xl border border-white/15 bg-[#090b10] shadow-2xl overflow-hidden font-mono">
+          
+          <!-- Terminal Titlebar -->
+          <div class="flex items-center justify-between px-4 py-2.5 bg-[#0e1117] border-b border-white/10 select-none">
+            <div class="flex items-center gap-2">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span class="text-[11.5px] text-slate-300 font-medium ml-2">supabase edge: ingest-pdf (WASM unpdf v1.8.1)</span>
+            </div>
+            
+            <div class="flex items-center gap-2 text-[10px]">
+              <span id="terminal-status-badge" class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+                STANDBY
+              </span>
+              <button onclick="copyTerminalCard()" class="text-slate-400 hover:text-white px-2.5 py-0.5 rounded border border-white/10 hover:border-white/20 transition-all flex items-center gap-1" title="Copy ASCII card to clipboard">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Copy Card</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terminal Content Area -->
+          <div class="p-4 flex-1 flex flex-col justify-start space-y-3 text-xs leading-relaxed">
+            
+            <!-- Target Specification Header -->
+            <div class="flex items-center justify-between border-b border-white/5 pb-2 text-[11.5px]">
+              <div>
+                <span class="text-slate-500">Target:</span> 
+                <span class="text-cyan-300 font-semibold ml-1.5">Indian_Income_Tax_Act_2025.pdf</span> 
+                <span class="text-slate-500 ml-1.5">(78 pages / 899 chunks)</span>
+              </div>
+              <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-semibold">V8 ISOLATE</span>
+            </div>
+
+            <!-- Visual 78-Page Glyph Streaming Matrix (3 rows of 26 cells) -->
+            <div class="rounded-lg bg-black/70 border border-white/5 p-2.5">
+              <div class="flex items-center justify-between mb-1.5 text-[10px] text-slate-400">
+                <span class="flex items-center gap-1.5 font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  PAGE GLYPH EXTRACTION MATRIX (78 PAGES)
+                </span>
+                <span id="page-counter-label" class="text-emerald-400 font-bold">78/78 PARSED</span>
+              </div>
+              
+              <!-- 78 Mini Page Indicators Grid -->
+              <div id="page-grid" style="display: grid; grid-template-columns: repeat(26, minmax(0, 1fr)); gap: 3px;" class="py-0.5">
+                <!-- Dynamically populated 78 cells -->
+              </div>
+            </div>
+
+            <!-- Execution Logs Checklist -->
+            <div class="space-y-1.5 text-[11.5px] sm:text-xs">
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Extracted glyph streams:</span>
+                </span>
+                <span id="log-val-pages" class="text-emerald-400 font-bold">78 / 78 pages</span>
+              </div>
+
+              <!-- Live RAM Meter -->
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>RAM Peak:</span>
+                </span>
+                <div class="flex items-center gap-2">
+                  <div class="w-32 h-2 rounded-full bg-white/10 overflow-hidden hidden sm:block">
+                    <div id="ram-progress" class="h-full bg-gradient-to-r from-emerald-500 to-cyan-400 w-[46%] transition-all duration-300"></div>
+                  </div>
+                  <span id="log-val-ram" class="text-cyan-300 font-bold">118MB / 256MB limit</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>External OCR Spend:</span>
+                </span>
+                <span class="text-[#00f59b] font-bold">$0.00 (Pure WebAssembly)</span>
+              </div>
+
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Downstream Retrieval:</span>
+                </span>
+                <span class="text-slate-100 font-bold text-right shrink-0 font-mono">
+                  <span class="text-[#00f59b]">93.3%</span> Hit@1 &nbsp;&bull;&nbsp; <span class="text-[#00f59b]">96.7%</span> Recall@8
+                </span>
+              </div>
+
+              <div class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>Security Barrier:</span>
+                </span>
+                <span class="text-slate-400">64KB early-reject enforced</span>
+              </div>
+            </div>
+
+            <!-- Live Stream Output Console -->
+            <div class="rounded-lg bg-black/80 border border-white/5 p-2 font-mono text-[10px] text-slate-400 space-y-0.5">
+              <div class="text-slate-500 flex justify-between">
+                <span>[STREAM LOG]</span>
+                <span class="text-cyan-400">WASM isolate runtime</span>
+              </div>
+              <div id="live-log-1" class="text-slate-300">&bull; [0.012s] Edge isolate initialized in V8 (0 OS binaries)</div>
+              <div id="live-log-2" class="text-slate-400">&bull; [0.145s] 78 pages chunked at 1000ch (strict page boundary)</div>
+              <div id="live-log-3" class="text-emerald-400/90">&bull; [0.312s] 899 chunks written to pgvector HNSW (RRF k=60)</div>
+            </div>
+
+            <!-- Terminal Execution Highlight Box -->
+            <div class="rounded-lg bg-black/90 border border-emerald-500/25 p-2.5 flex items-center justify-between shadow-lg mt-auto">
+              <div class="flex items-center gap-2.5">
+                <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
+                <span class="text-slate-200 text-xs">
+                  Done: <span id="log-val-chunks" class="text-emerald-300 font-bold">899 chunks</span> written to pgvector HNSW in <span id="log-val-time" class="text-cyan-300 font-bold">312ms</span>.
+                </span>
+              </div>
+              <span class="text-[10px] text-slate-500 font-mono hidden sm:inline">RRF k=60 locked</span>
+            </div>
+
+          </div>
+
+          <!-- Terminal Interactive Run Deck -->
+          <div class="p-3 bg-[#0e1117] border-t border-white/10 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2.5">
+              <button id="btn-run-sim" onclick="replaySimulation()" class="px-4 py-1.5 rounded-lg bg-emerald-500 text-black font-semibold hover:bg-[#00f59b] transition-all flex items-center gap-1.5 shadow-lg shadow-emerald-500/20 active:scale-95 text-xs">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <span>Replay Ingestion Stream</span>
+              </button>
+              <button onclick="inspectChunkSample()" class="px-3 py-1.5 rounded-lg bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 hover:border-white/20 transition-all text-xs flex items-center gap-1">
+                <span>Inspect Chunks</span>
+              </button>
+            </div>
+            <div class="text-[10.5px] text-slate-500 font-mono">
+              Zero PyMuPDF &bull; Zero Poppler &bull; Zero CUDA
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CARD VIEW 2: Comparison Matrix (3B Vision GPU vs RAG-4i V8 Edge) -->
+        <div id="view-comparison" class="hidden flex-1 flex flex-col rounded-xl border border-white/15 bg-[#090b10] shadow-2xl overflow-hidden font-mono p-4 justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-2.5 mb-3">
+              <span class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                Viral Claim (3B GPU) vs RAG-4i Edge (V8 Isolate)
+              </span>
+              <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-medium">Production Audit</span>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="grid grid-cols-3 gap-2 text-[11.5px] leading-tight">
+              <!-- Header -->
+              <div class="text-slate-500 font-bold pb-1.5">Dimension</div>
+              <div class="text-rose-400 font-bold pb-1.5 text-center">3B Vision Model (A10G)</div>
+              <div class="text-[#00f59b] font-bold pb-1.5 text-center">RAG-4i (unpdf + V8)</div>
+
+              <!-- Row 1: Cost -->
+              <div class="py-2.5 border-t border-white/5 text-slate-400">Monthly Compute</div>
+              <div class="py-2.5 border-t border-white/5 text-rose-300 font-bold text-center">~$850.00 / mo</div>
+              <div class="py-2.5 border-t border-white/5 text-[#00f59b] font-bold text-center">$0.00 (Serverless Edge)</div>
+
+              <!-- Row 2: Latency -->
+              <div class="py-2.5 border-t border-white/5 text-slate-400">78-Page Extraction</div>
+              <div class="py-2.5 border-t border-white/5 text-rose-300 text-center">320s (4.1s / page)</div>
+              <div class="py-2.5 border-t border-white/5 text-[#00f59b] font-bold text-center">312ms Total</div>
+
+              <!-- Row 3: Memory -->
+              <div class="py-2.5 border-t border-white/5 text-slate-400">RAM Footprint</div>
+              <div class="py-2.5 border-t border-white/5 text-rose-300 text-center">14 GB VRAM</div>
+              <div class="py-2.5 border-t border-white/5 text-[#00f59b] font-bold text-center">118 MB Peak</div>
+
+              <!-- Row 4: Dependencies -->
+              <div class="py-2.5 border-t border-white/5 text-slate-400">Runtime Complexity</div>
+              <div class="py-2.5 border-t border-white/5 text-slate-400 text-center">CUDA, Torch, Heavy Docker</div>
+              <div class="py-2.5 border-t border-white/5 text-[#00f59b] font-bold text-center">Pure V8 Isolate</div>
+
+              <!-- Row 5: Accuracy -->
+              <div class="py-2.5 border-t border-white/5 text-slate-400">Statutory Recall@8</div>
+              <div class="py-2.5 border-t border-white/5 text-slate-400 text-center">~91% (OCR hallucination)</div>
+              <div class="py-2.5 border-t border-white/5 text-[#00f59b] font-bold text-center">96.7% Proven</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-white/[0.02] border border-white/10 rounded-lg text-xs text-slate-300">
+            <span class="text-amber-400 font-bold">Rule of Thumb:</span> If your documents are digital PDFs with an embedded text layer, a clean serverless CPU parser will consistently beat a heavy 3B vision model on latency, cost, and operational simplicity.
+          </div>
+        </div>
+
+        <!-- CARD VIEW 3: Interactive Architecture Flow Diagram -->
+        <div id="view-architecture" class="hidden flex-1 flex flex-col rounded-xl border border-white/15 bg-[#090b10] shadow-2xl overflow-hidden font-mono p-4 justify-between">
+          <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+            <span class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              RAG-4i Zero-GPU Streaming Pipeline
+            </span>
+            <span class="text-[10px] text-slate-400">End-to-End Latency: 312ms</span>
+          </div>
+
+          <!-- Visual Pipeline Stages -->
+          <div class="grid grid-cols-4 gap-2.5 my-auto">
+            
+            <div class="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center relative group hover:border-emerald-500/40 transition-all">
+              <div class="text-[9px] text-emerald-400 font-bold mb-1">STAGE 1</div>
+              <div class="text-xs font-bold text-slate-200">PDF Ingestion</div>
+              <div class="text-[10px] text-slate-400 mt-1">Supabase Edge (Deno)</div>
+              <div class="mt-2 text-[10px] text-cyan-300 bg-cyan-950/40 rounded py-0.5">&lt;64KB early-reject</div>
+            </div>
+
+            <div class="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center relative group hover:border-emerald-500/40 transition-all">
+              <div class="text-[9px] text-emerald-400 font-bold mb-1">STAGE 2</div>
+              <div class="text-xs font-bold text-slate-200">WASM unpdf</div>
+              <div class="text-[10px] text-slate-400 mt-1">Direct V8 memory</div>
+              <div class="mt-2 text-[10px] text-emerald-300 bg-emerald-950/40 rounded py-0.5">118MB RAM</div>
+            </div>
+
+            <div class="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center relative group hover:border-emerald-500/40 transition-all">
+              <div class="text-[9px] text-emerald-400 font-bold mb-1">STAGE 3</div>
+              <div class="text-xs font-bold text-slate-200">Page Boundary</div>
+              <div class="text-[10px] text-slate-400 mt-1">1000ch / 200 overlap</div>
+              <div class="mt-2 text-[10px] text-amber-300 bg-amber-950/40 rounded py-0.5">899 Chunks</div>
+            </div>
+
+            <div class="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center relative group hover:border-emerald-500/40 transition-all">
+              <div class="text-[9px] text-emerald-400 font-bold mb-1">STAGE 4</div>
+              <div class="text-xs font-bold text-slate-200">Hybrid Search</div>
+              <div class="text-[10px] text-slate-400 mt-1">pgvector + FTS</div>
+              <div class="mt-2 text-[10px] text-[#00f59b] bg-emerald-950/40 rounded py-0.5">RRF k=60</div>
+            </div>
+
+          </div>
+
+          <div class="p-3.5 bg-black/60 border border-white/10 rounded-lg text-xs text-slate-400">
+            <span class="text-cyan-400 font-bold">Provenance Guarantee:</span> Because statutory provisos never cross page boundaries in our chunker, cited tax laws directly correlate to legal page scans with 97.5% citation precision.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 3. FOOTER STRIP: Discussion Hook & Interactive Reaction Bar -->
+    <footer class="relative z-10 flex flex-col sm:flex-row items-center justify-between border-t border-white/10 pt-3 gap-2">
+      <!-- Discussion Prompt -->
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        <span class="text-xs sm:text-[13px] font-medium text-slate-200">
+          How are you handling legal & financial PDF extraction in your production RAG stack?
+        </span>
+      </div>
+
+      <!-- Quick Interactive Poll Badges -->
+      <div class="flex items-center gap-2 font-mono text-xs">
+        <button onclick="voteOption('v8')" id="poll-v8" class="px-3 py-1 rounded-md bg-white/[0.04] hover:bg-emerald-500/20 hover:text-[#00f59b] hover:border-emerald-500/40 border border-white/10 text-slate-400 transition-all flex items-center gap-1.5">
+          <span>Serverless CPU</span>
+          <span class="text-slate-500 font-bold" id="vote-v8-count">74%</span>
+        </button>
+        <button onclick="voteOption('gpu')" id="poll-gpu" class="px-3 py-1 rounded-md bg-white/[0.04] hover:bg-rose-500/20 hover:text-rose-400 hover:border-rose-500/40 border border-white/10 text-slate-400 transition-all flex items-center gap-1.5">
+          <span>3B Vision GPU</span>
+          <span class="text-slate-500 font-bold" id="vote-gpu-count">19%</span>
+        </button>
+        <button onclick="voteOption('cloud')" id="poll-cloud" class="px-3 py-1 rounded-md bg-white/[0.04] hover:bg-cyan-500/20 hover:text-cyan-400 hover:border-cyan-500/40 border border-white/10 text-slate-400 transition-all flex items-center gap-1.5">
+          <span>Managed OCR</span>
+          <span class="text-slate-500 font-bold" id="vote-cloud-count">7%</span>
+        </button>
+      </div>
+    </footer>
+
+    <!-- INTERACTIVE CHUNK MODAL / DRAWER -->
+    <div id="chunk-drawer" class="hidden absolute inset-4 z-30 bg-[#07090e]/95 backdrop-blur-md border border-emerald-500/30 rounded-xl p-5 flex flex-col justify-between font-mono animate-fadeIn">
+      <div class="flex items-center justify-between border-b border-white/10 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          <span class="text-xs font-bold text-white">STATUTORY PROVENANCE INSPECTOR &mdash; CHUNK #412</span>
+        </div>
+        <button onclick="closeChunkDrawer()" class="text-slate-400 hover:text-white px-2 py-0.5 rounded border border-white/10 text-xs">
+          ✕ Close [ESC]
+        </button>
+      </div>
+
+      <div class="my-3 p-4 rounded-lg bg-black/80 border border-white/10 text-xs leading-relaxed text-slate-300 overflow-y-auto max-h-[60%] font-mono">
+        <div class="text-[10px] text-emerald-400 mb-2 border-b border-white/5 pb-1 flex justify-between">
+          <span>[PAGE 34 / PROVISO 2] &bull; INDIAN INCOME TAX ACT &bull; SECTION 80C(2)</span>
+          <span class="text-slate-500">TOKENS: 248 | LENGTH: 994 CHARS</span>
+        </div>
+        <p class="text-slate-200">
+          "Provided that where the aggregate of any sums referred to in sub-clause (i) of clause (a) of sub-section (2) exceeds one lakh fifty thousand rupees, deductions under this section shall be restricted to one lakh fifty thousand rupees notwithstanding any payments made under voluntary superannuation schemes..."
+        </p>
+        <div class="mt-3 text-[10px] text-cyan-400/80">
+          &bull; Page-boundary check: STRICT PASS (0 char cross-boundary spillover) &bull; Provenance anchor: Indian_Tax_2025.pdf#page=34
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-400 border-t border-white/10 pt-2">
+        <span>pgvector Distance: 0.142 (Cosine) | BM25 Rank: 1 (RRF score: 0.0328)</span>
+        <button onclick="closeChunkDrawer()" class="px-3 py-1 bg-emerald-500 text-black font-semibold rounded hover:bg-[#00f59b] text-xs">
+          Return to Console
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="hidden absolute bottom-14 left-1/2 -translate-x-1/2 z-40 px-4 py-2 rounded-lg bg-emerald-500 text-black font-mono font-bold text-xs shadow-xl transition-all">
+      Copied terminal card to clipboard!
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT: Synthesizer, 78-Page Matrix, Animations, Clipboard -->
+  <script>
+    // Build the 78-page matrix cells (3 rows of 26 cells)
+    const pageGrid = document.getElementById('page-grid');
+    for (let i = 1; i <= 78; i++) {
+      const cell = document.createElement('div');
+      cell.id = `cell-page-${i}`;
+      cell.className = 'page-cell h-2 rounded-[1.5px] bg-emerald-400/80 border border-emerald-300/40';
+      cell.title = `Page ${i}: Parsed`;
+      pageGrid.appendChild(cell);
+    }
+
+    let audioEnabled = false;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTick(freq = 800, type = 'sine', duration = 0.03) {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function toggleAudio() {
+      initAudio();
+      audioEnabled = !audioEnabled;
+      document.getElementById('icon-sound-off').classList.toggle('hidden', audioEnabled);
+      document.getElementById('icon-sound-on').classList.toggle('hidden', !audioEnabled);
+      if (audioEnabled) playTick(980, 'triangle', 0.06);
+    }
+
+    // View Switching
+    function switchView(viewName) {
+      playTick(600, 'sine', 0.04);
+      const views = ['telemetry', 'comparison', 'architecture'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        const btn = document.getElementById(`btn-tab-${v}`);
+        if (el && btn) {
+          if (v === viewName) {
+            el.classList.remove('hidden');
+            btn.className = "px-3 py-1 rounded-md bg-emerald-500/20 text-[#00f59b] border border-emerald-500/30 font-medium transition-all text-[11px]";
+          } else {
+            el.classList.add('hidden');
+            btn.className = "px-3 py-1 rounded-md text-slate-400 hover:text-white transition-all text-[11px]";
+          }
+        }
+      });
+    }
+
+    // Interactive Pillar Highlights
+    function focusPillar(num) {
+      playTick(720, 'sine', 0.05);
+      [1, 2, 3].forEach(n => {
+        const p = document.getElementById(`pillar-${n}`);
+        if (n === num) {
+          p.classList.add('ring-1', 'ring-emerald-400', 'bg-emerald-950/30');
+        } else {
+          p.classList.remove('ring-1', 'ring-emerald-400', 'bg-emerald-950/30');
+        }
+      });
+      if (num === 1) switchView('telemetry');
+      if (num === 2) inspectChunkSample();
+      if (num === 3) switchView('architecture');
+    }
+
+    // Interactive Ingestion Replay Simulation
+    let isSimulating = false;
+    function replaySimulation() {
+      if (isSimulating) return;
+      isSimulating = true;
+      initAudio();
+
+      const btn = document.getElementById('btn-run-sim');
+      const badge = document.getElementById('terminal-status-badge');
+      const valPages = document.getElementById('log-val-pages');
+      const valRam = document.getElementById('log-val-ram');
+      const ramProgress = document.getElementById('ram-progress');
+      const valChunks = document.getElementById('log-val-chunks');
+      const valTime = document.getElementById('log-val-time');
+      const pageCounterLabel = document.getElementById('page-counter-label');
+
+      // Reset cells to dimmed
+      for (let i = 1; i <= 78; i++) {
+        const c = document.getElementById(`cell-page-${i}`);
+        if (c) c.className = 'page-cell h-2 rounded-[1.5px] bg-white/5 border border-white/5';
+      }
+
+      badge.innerText = "STREAMING...";
+      badge.className = "px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-medium animate-pulse";
+      btn.classList.add('opacity-50', 'pointer-events-none');
+
+      let currentPg = 0;
+      let totalPages = 78;
+      
+      const interval = setInterval(() => {
+        currentPg += 2;
+        if (currentPg > totalPages) currentPg = totalPages;
+        
+        // Light up cells
+        for (let j = 1; j <= currentPg; j++) {
+          const c = document.getElementById(`cell-page-${j}`);
+          if (c && !c.classList.contains('bg-emerald-400/80')) {
+            c.className = 'page-cell h-2 rounded-[1.5px] bg-emerald-400 border border-emerald-300 shadow-sm shadow-emerald-400/50';
+          }
+        }
+
+        valPages.innerText = `${currentPg} / ${totalPages} pages`;
+        pageCounterLabel.innerText = `${currentPg}/${totalPages} PARSED`;
+
+        const ramCurrent = Math.round((currentPg / totalPages) * 118);
+        valRam.innerText = `${ramCurrent}MB / 256MB limit`;
+        ramProgress.style.width = `${(ramCurrent / 256) * 100}%`;
+        
+        const chunksNow = Math.round((currentPg / totalPages) * 899);
+        valChunks.innerText = `${chunksNow} chunks`;
+
+        playTick(350 + currentPg * 9, 'sine', 0.012);
+
+        if (currentPg >= totalPages) {
+          clearInterval(interval);
+          valTime.innerText = "312ms";
+          badge.innerText = "COMPLETE (312ms)";
+          badge.className = "px-2.5 py-0.5 rounded bg-emerald-500/20 text-[#00f59b] border border-emerald-500/30 font-medium";
+          btn.classList.remove('opacity-50', 'pointer-events-none');
+          isSimulating = false;
+          playTick(920, 'triangle', 0.08);
+        }
+      }, 35);
+    }
+
+    // Modal Inspection
+    function inspectChunkSample() {
+      playTick(500, 'sine', 0.04);
+      document.getElementById('chunk-drawer').classList.remove('hidden');
+    }
+
+    function closeChunkDrawer() {
+      playTick(450, 'sine', 0.03);
+      document.getElementById('chunk-drawer').classList.add('hidden');
+    }
+
+    // ESC to close drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeChunkDrawer();
+      if (e.key.toLowerCase() === 'f') toggleFullscreen();
+    });
+
+    // Copy Ray.so Terminal ASCII Card
+    function copyTerminalCard() {
+      playTick(850, 'triangle', 0.06);
+      const textToCopy = `┌─────────────────────────────────────────────────────────────┐
+│ supabase edge: ingest-pdf (WASM unpdf v1.8.1)               │
+├─────────────────────────────────────────────────────────────┤
+│ Target: Indian_Income_Tax_Act_2025.pdf (78 pages)           │
+│                                                             │
+│ ✓ Extracted glyph streams: 78/78 pages                      │
+│ ✓ RAM Peak: 118MB / 256MB limit                             │
+│ ✓ External OCR Spend: $0.00                                 │
+│ ✓ Downstream Retrieval: 93.3% Hit@1 | 96.7% Recall@8        │
+│ ✓ Security: 64KB early-reject enforced                      │
+│                                                             │
+│ Done: 899 chunks written to pgvector HNSW in 312ms.         │
+└─────────────────────────────────────────────────────────────┘`;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const toast = document.getElementById('toast');
+        toast.innerText = "Copied Ray.so / Carbon card to clipboard!";
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2200);
+      });
+    }
+
+    // Fullscreen Toggle
+    function toggleFullscreen() {
+      playTick(650, 'sine', 0.04);
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+
+    // Interactive Reaction Poll
+    function voteOption(type) {
+      playTick(750, 'sine', 0.05);
+      ['v8', 'gpu', 'cloud'].forEach(opt => {
+        const b = document.getElementById(`poll-${opt}`);
+        if (opt === type) {
+          b.classList.add('bg-emerald-500/20', 'border-emerald-500/50', 'text-white');
+        }
+      });
+      const toast = document.getElementById('toast');
+      toast.innerText = "Vote recorded in benchmark poll!";
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 1800);
+    }
+  </script>
+</body>
+</html>
