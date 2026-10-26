@@ -8,10 +8,24 @@ keys.json
 node_modules/
 supabase/.temp/
 __pycache__/
+**/__pycache__/
 *.pyc
-# Local agent-tooling downloads (not part of the project).
+**/*.pyc
+
+# Local agent-tooling and video generation artifacts
 .agents/
 skills-lock.json
+super-video-maker-skill/
+brag-output/
+brag-output-*/
+.vibe-wise/
+
+# Personal career / resume working artifacts (kept local)
+CV_NEERAJ_SHIVKUMAR.md
+NEERAJ_SHIVKUMAR_RESUME.*
+generate_resume_docs.py
+resume_template.html
+interview-deck/
 # Repository boundary: the research corpus, uploaded test data and generated
 # evaluation run artifacts are NOT published (they can embed source passage
 # text and business documents). They stay in the local working tree; add them
