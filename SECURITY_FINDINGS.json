@@ -1,0 +1,51 @@
+[
+ {
+  "id": "SEC-01",
+  "severity": "HIGH",
+  "area": "prompt-injection isolation",
+  "status": "control present locally (v2 UNTRUSTED-DATA delimiters in committed source + test pin); live injection battery BLOCKED (needs isolated malicious corpus)",
+  "evidence": "LOCAL"
+ },
+ {
+  "id": "SEC-02",
+  "severity": "HIGH",
+  "area": "spend controls",
+  "status": "deployed + live-proven 2026-10-04 (kill/429/busy/accounting); re-verified present, no new probes this package",
+  "evidence": "PROVEN LIVE (prior gate, unchanged since)"
+ },
+ {
+  "id": "SEC-03",
+  "severity": "MEDIUM",
+  "area": "ownership RLS",
+  "status": "migration applied; admin delete/verify exercised; non-owner-deny live BLOCKED (needs 2nd credential)",
+  "evidence": "LOCAL + prior B5 pattern"
+ },
+ {
+  "id": "SEC-04",
+  "severity": "MEDIUM",
+  "area": "input edge (64KB/timeouts/safe-errors)",
+  "status": "wired on all entries in committed source; live oversized probe not repeated (no need)",
+  "evidence": "LOCAL"
+ },
+ {
+  "id": "SEC-05",
+  "severity": "MEDIUM",
+  "area": "storage path pinning",
+  "status": "policies live per migration; traversal/enumeration probes BLOCKED",
+  "evidence": "LOCAL (SQL review)"
+ },
+ {
+  "id": "SEC-06",
+  "severity": "LOW",
+  "area": "secrets/logs",
+  "status": "0 secret-value hits repo-wide (code+web+eval); secret list shows hashes only; no creds in repo",
+  "evidence": "LOCAL"
+ },
+ {
+  "id": "SEC-07",
+  "severity": "INFO",
+  "area": "retrieval bounds",
+  "status": "k8/cap50/1000char/1024tok caps in committed source; 315/315 green",
+  "evidence": "LOCAL"
+ }
+]
