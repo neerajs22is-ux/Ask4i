@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import {
-  Check,
-  ChevronDown,
   FileText,
   SearchX,
   ShieldCheck,
   Sparkles,
+  X,
 } from "lucide-react";
 
 import { EvidenceStatusBadge } from "@/components/foundation/evidence-status";
@@ -16,15 +15,17 @@ import { cn } from "cn";
 /**
  * Interactive Answer Demo & Grounding Inspector.
  *
- * Demonstrates RAG-4i's core capability:
- * 1. Switch between query presets (Statutory policy, fail-closed refusal, tax code).
- * 2. Click citation markers [1], [2] to inspect verbatim source passages.
- * 3. Shows zero-hallucination honest refusal behavior when documents lack evidence.
+ * Designed for immediate, tactile interactivity:
+ * 1. Prominent segmented tab switcher for 3 query types.
+ * 2. Instant inline citation inspector popover when clicking [1] or [2].
+ * 3. Quick question prompt pills for 1-click test queries.
+ * 4. Demonstrates live claim verification and fail-closed refusal.
  */
 
 type QueryPreset = {
   id: string;
   tabLabel: string;
+  shortLabel: string;
   badgeLabel: string;
   question: string;
   state: "supported" | "insufficient";
@@ -41,6 +42,7 @@ type QueryPreset = {
     page: number;
     excerpt: string;
     highlight: string;
+    score: string;
   }[];
   refusalNote?: string;
 };
@@ -49,7 +51,8 @@ const PRESETS: QueryPreset[] = [
   {
     id: "depreciation",
     tabLabel: "Policy & Audit",
-    badgeLabel: "Standard Query",
+    shortLabel: "Depreciation Audit",
+    badgeLabel: "Accounting Matter",
     question:
       "What should we confirm before finalising a client's depreciation schedule?",
     state: "supported",
@@ -74,6 +77,7 @@ const PRESETS: QueryPreset[] = [
         excerpt:
           "Do not finalise a depreciation schedule until the asset register and the fixed-asset ledger reconcile, line by line, for every class of asset.",
         highlight: "reconcile, line by line, for every class of asset",
+        score: "99.0% Grounded",
       },
       {
         n: 2,
@@ -82,13 +86,15 @@ const PRESETS: QueryPreset[] = [
         excerpt:
           "For additions during the year, compute depreciation from the date the asset was first put to use; the invoice date is not the acquisition date for this purpose.",
         highlight: "from the date the asset was first put to use",
+        score: "98.5% Grounded",
       },
     ],
   },
   {
     id: "refusal",
     tabLabel: "Honest Refusal (Zero Hallucination)",
-    badgeLabel: "Fail-Closed Gate",
+    shortLabel: "Gap Refusal",
+    badgeLabel: "verifyEvidence Gate",
     question: "What was the firm's advisory revenue in Germany for Q3?",
     state: "insufficient",
     retrievedCount: 7,
@@ -109,6 +115,7 @@ const PRESETS: QueryPreset[] = [
   {
     id: "taxcode",
     tabLabel: "Statutory Tax Code (§92CB)",
+    shortLabel: "Tax Act §92CB",
     badgeLabel: "Indian Income Tax Act",
     question: "What are the safe harbour rules under Section 92CB?",
     state: "supported",
@@ -133,6 +140,7 @@ const PRESETS: QueryPreset[] = [
         excerpt:
           "Section 92CB (1): The determination of arm's length price under section 92C or section 92CA shall be subject to safe harbour rules.",
         highlight: "subject to safe harbour rules",
+        score: "99.4% Statutory Anchor",
       },
       {
         n: 2,
@@ -141,6 +149,7 @@ const PRESETS: QueryPreset[] = [
         excerpt:
           "Eligible international transaction means an international transaction between associated enterprises in software development services with operating margins >= 17%.",
         highlight: "operating margins >= 17%",
+        score: "98.8% Statutory Anchor",
       },
     ],
   },
@@ -149,7 +158,7 @@ const PRESETS: QueryPreset[] = [
 export function InteractiveAnswerDemo() {
   const [selectedPresetId, setSelectedPresetId] = useState<string>("depreciation");
   const [activeCitation, setActiveCitation] = useState<number | null>(1);
-  const [evidenceOpen, setEvidenceOpen] = useState<boolean>(true);
+  const [showCitationDrawer, setShowCitationDrawer] = useState<boolean>(true);
 
   const activePreset =
     PRESETS.find((p) => p.id === selectedPresetId) ?? PRESETS[0];
@@ -159,115 +168,127 @@ export function InteractiveAnswerDemo() {
     const preset = PRESETS.find((p) => p.id === id);
     if (preset && preset.sources.length > 0) {
       setActiveCitation(1);
+      setShowCitationDrawer(true);
     } else {
       setActiveCitation(null);
+      setShowCitationDrawer(false);
     }
   };
 
   const handleCitationClick = (n: number) => {
-    setActiveCitation((prev) => (prev === n ? null : n));
-    setEvidenceOpen(true);
+    if (activeCitation === n && showCitationDrawer) {
+      setShowCitationDrawer(false);
+    } else {
+      setActiveCitation(n);
+      setShowCitationDrawer(true);
+    }
   };
 
+  const activeSource = activePreset.sources.find((s) => s.n === activeCitation);
+
   return (
-    <div className="bg-background hairline site-reveal rounded-2xl border p-3.5 shadow-lg sm:p-5">
-      {/* 1. Query Preset Selector Tabs */}
-      <div className="mb-3.5 flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
-        <div className="flex flex-wrap items-center gap-1">
-          {PRESETS.map((preset) => {
-            const isSelected = preset.id === selectedPresetId;
-            return (
-              <button
-                key={preset.id}
-                type="button"
-                onClick={() => handleSelectPreset(preset.id)}
-                className={cn(
-                  "rounded-md px-2.5 py-1 text-2xs font-medium transition-colors duration-[var(--duration-fast)]",
-                  isSelected
-                    ? "bg-primary text-primary-foreground font-semibold shadow-xs"
-                    : "text-muted-foreground hover:bg-muted/80 hover:text-foreground",
-                )}
-              >
-                {preset.tabLabel}
-              </button>
-            );
-          })}
-        </div>
-        <span className="text-muted-foreground hidden font-mono text-2xs sm:inline-block">
+    <div className="bg-background hairline site-reveal rounded-2xl border p-4 shadow-xl sm:p-5.5">
+      {/* 1. Header with Clear Instruction */}
+      <div className="mb-3 flex items-center justify-between border-b border-border/70 pb-2.5">
+        <span className="text-2xs font-mono font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+          <span className="inline-block size-2 rounded-full bg-emerald-500 animate-pulse" />
+          Interactive Engine Sandbox
+        </span>
+        <span className="text-2xs font-mono text-muted-foreground">
           {activePreset.corpusNote}
         </span>
       </div>
 
-      {/* 2. Question Surface */}
-      <div className="bg-secondary/70 hairline rounded-xl border px-3.5 py-2.5">
-        <div className="mb-1 flex items-center justify-between">
-          <span className="text-muted-foreground font-mono text-2xs uppercase tracking-wider">
-            User Query
-          </span>
-          <span className="bg-background/80 text-foreground rounded px-1.5 py-0.5 font-mono text-2xs">
+      {/* 2. Prominent Preset Query Buttons */}
+      <div className="mb-3.5 flex flex-wrap gap-1.5">
+        {PRESETS.map((preset) => {
+          const isSelected = preset.id === selectedPresetId;
+          return (
+            <button
+              key={preset.id}
+              type="button"
+              onClick={() => handleSelectPreset(preset.id)}
+              className={cn(
+                "cursor-pointer rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-[var(--duration-fast)] flex items-center gap-1.5",
+                isSelected
+                  ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/30"
+                  : "bg-muted/80 text-foreground hover:bg-muted border border-border/60 hover:border-foreground/30",
+              )}
+            >
+              <span>{preset.tabLabel}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* 3. User Question */}
+      <div className="bg-secondary/70 hairline rounded-xl border px-4 py-3">
+        <div className="mb-1 flex items-center justify-between text-2xs font-mono text-muted-foreground">
+          <span className="uppercase tracking-wider">Simulated Query</span>
+          <span className="bg-background/80 text-foreground rounded px-1.5 py-0.5">
             {activePreset.badgeLabel}
           </span>
         </div>
-        <p className="text-sm font-medium leading-relaxed break-words sm:text-base">
+        <p className="text-sm font-medium leading-relaxed sm:text-base text-foreground">
           {activePreset.question}
         </p>
       </div>
 
-      {/* 3. Answer Surface */}
-      <article className="mt-3" aria-label="Example answer">
+      {/* 4. Generated Answer Box */}
+      <article className="mt-3.5" aria-label="Example answer">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <EvidenceStatusBadge state={activePreset.state} />
             <span className="text-muted-foreground font-mono text-2xs">
-              {activePreset.retrievedCount} retrieved · {activePreset.citedCount}{" "}
-              cited
+              {activePreset.retrievedCount} retrieved · {activePreset.citedCount} cited
             </span>
           </div>
           {activePreset.state === "supported" && (
-            <span className="text-success inline-flex items-center gap-1 font-mono text-2xs">
-              <ShieldCheck className="size-3" />
-              99.0% Grounded
+            <span className="text-success inline-flex items-center gap-1 font-mono text-2xs font-medium">
+              <ShieldCheck className="size-3.5" />
+              99.0% Grounding Entailment
             </span>
           )}
         </div>
 
-        <div className="bg-card hairline mt-2.5 rounded-xl border px-4 py-3 text-sm leading-relaxed shadow-xs sm:text-base">
+        <div className="bg-card hairline mt-2.5 rounded-xl border p-4 text-sm leading-relaxed shadow-xs sm:text-base">
           {activePreset.answerParagraphs.map((para, i) => (
             <p
               key={i}
-              className="my-2.5 leading-relaxed text-pretty first:mt-1 last:mb-1"
+              className="my-2 leading-relaxed text-pretty text-foreground first:mt-0 last:mb-0"
             >
               {para.text}
               {para.citations?.map((c) => {
-                const isActive = activeCitation === c;
+                const isSelected = activeCitation === c && showCitationDrawer;
                 return (
                   <button
                     key={c}
                     type="button"
                     onClick={() => handleCitationClick(c)}
                     className={cn(
-                      "ml-1 inline-flex cursor-pointer items-center rounded-md border px-1.5 py-0.2 font-mono text-2xs font-semibold align-super transition-all duration-[var(--duration-fast)]",
-                      isActive
-                        ? "bg-primary text-primary-foreground border-primary scale-105 shadow-xs"
-                        : "bg-muted text-foreground border-border hover:border-foreground/40",
+                      "ml-1.5 inline-flex cursor-pointer items-center gap-0.5 rounded-md px-2 py-0.5 font-mono text-xs font-bold align-super transition-all duration-[var(--duration-fast)]",
+                      isSelected
+                        ? "bg-primary text-primary-foreground border-primary shadow-md scale-110 ring-2 ring-primary/40"
+                        : "bg-primary/15 text-primary-strong border border-primary/30 hover:bg-primary/25 hover:scale-105",
                     )}
-                    title={`Click to inspect verbatim source passage [${c}]`}
+                    title={`Click to inspect verbatim source passage for citation [${c}]`}
                     aria-label={`Citation [${c}]`}
                   >
-                    [{c}]
+                    <span>[{c}]</span>
                   </button>
                 );
               })}
             </p>
           ))}
 
+          {/* Refusal Explainer */}
           {activePreset.refusalNote && (
-            <div className="bg-neutral-state-muted/80 hairline mt-3 rounded-lg border border-border/80 p-3 text-xs">
+            <div className="bg-neutral-state-muted/80 hairline mt-3 rounded-lg border border-border/80 p-3.5 text-xs">
               <div className="text-foreground flex items-center gap-1.5 font-semibold">
-                <SearchX className="size-3.5 text-muted-foreground" />
-                Evidence Gate Verdict: Fail-Closed
+                <SearchX className="size-4 text-warning" />
+                Evidence Gate Invariant: Deterministic Refusal
               </div>
-              <p className="text-muted-foreground mt-1 leading-relaxed">
+              <p className="text-muted-foreground mt-1.5 leading-relaxed text-pretty">
                 {activePreset.refusalNote}
               </p>
             </div>
@@ -275,95 +296,65 @@ export function InteractiveAnswerDemo() {
         </div>
       </article>
 
-      {/* 4. Supporting Evidence Inspector */}
-      {activePreset.sources.length > 0 && (
-        <div className="mt-3" aria-label="Supporting evidence inspector">
-          <button
-            type="button"
-            onClick={() => setEvidenceOpen(!evidenceOpen)}
-            className="border-border/60 flex w-full cursor-pointer items-center gap-2 border-t pt-2 text-left"
-          >
-            <span className="text-foreground text-2xs font-medium tracking-wide uppercase">
-              Supporting Evidence
-            </span>
-            <span className="text-muted-foreground text-2xs">
-              {activePreset.sources.length} sources · Click citation to inspect
-            </span>
-            <ChevronDown
-              aria-hidden="true"
-              className={cn(
-                "text-muted-foreground ml-auto size-3.5 shrink-0 transition-transform duration-[var(--duration-normal)]",
-                evidenceOpen && "rotate-180",
-              )}
-            />
-          </button>
+      {/* 5. Prominent Citation Inspector Drawer (Direct Visual Feedback) */}
+      {showCitationDrawer && activeSource && (
+        <div className="mt-3.5 rounded-xl border border-primary/40 bg-primary/5 p-3.5 shadow-sm transition-all duration-[var(--duration-fast)]">
+          <div className="flex items-center justify-between border-b border-primary/20 pb-2">
+            <div className="flex items-center gap-2">
+              <span className="bg-primary text-primary-foreground inline-flex size-5 items-center justify-center rounded font-mono text-2xs font-bold">
+                {activeSource.n}
+              </span>
+              <span className="text-xs font-semibold text-foreground flex items-center gap-1">
+                <FileText className="size-3.5 text-primary-strong" />
+                {activeSource.file}
+              </span>
+              <span className="text-muted-foreground font-mono text-2xs">
+                · Page {activeSource.page}
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="bg-success-muted text-success border border-success/30 rounded-full px-2 py-0.5 font-mono text-2xs font-medium">
+                {activeSource.score}
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowCitationDrawer(false)}
+                className="text-muted-foreground hover:text-foreground cursor-pointer p-0.5"
+                title="Close citation inspector"
+                aria-label="Close citation inspector"
+              >
+                <X className="size-3.5" />
+              </button>
+            </div>
+          </div>
 
-          {evidenceOpen && (
-            <ol className="divide-border/70 mt-1 divide-y">
-              {activePreset.sources.map((source) => {
-                const isHighlighted = activeCitation === source.n;
-                return (
-                  <li
-                    key={source.n}
-                    onClick={() => handleCitationClick(source.n)}
-                    className={cn(
-                      "flex cursor-pointer items-start gap-2.5 rounded-lg p-2 transition-all duration-[var(--duration-fast)]",
-                      isHighlighted
-                        ? "bg-accent/40 hairline border-primary/40 ring-1 ring-primary/30"
-                        : "hover:bg-muted/40",
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "inline-flex size-5 shrink-0 items-center justify-center rounded font-mono text-2xs font-semibold transition-colors",
-                        isHighlighted
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-foreground border border-border",
-                      )}
-                      title={`Citation ${source.n}`}
-                    >
-                      {source.n}
-                    </span>
-                    <div className="min-w-0 flex-1 leading-tight">
-                      <div className="flex min-w-0 items-center justify-between gap-1 text-xs">
-                        <span
-                          className="text-foreground flex items-center gap-1 truncate font-medium"
-                          title={source.file}
-                        >
-                          <FileText className="text-muted-foreground size-3" />
-                          {source.file}
-                        </span>
-                        <span className="text-muted-foreground shrink-0 font-mono text-2xs">
-                          p. {source.page}
-                        </span>
-                      </div>
-                      <blockquote className="border-border/80 text-foreground/90 mt-1.5 border-l-2 pl-2 text-xs leading-relaxed break-words">
-                        {source.excerpt}
-                      </blockquote>
-                      {isHighlighted && (
-                        <div className="mt-1.5 flex items-center gap-1.5 text-2xs font-medium text-primary-strong">
-                          <Check className="size-3" />
-                          <span>Entailment Grounding: Verified Entailed (1.000)</span>
-                        </div>
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          )}
+          <div className="mt-2.5">
+            <div className="text-2xs font-mono uppercase tracking-wider text-muted-foreground mb-1">
+              Verbatim passage in verified source PDF:
+            </div>
+            <blockquote className="border-l-2 border-primary pl-2.5 text-xs sm:text-sm text-foreground/90 font-sans leading-relaxed">
+              &ldquo;{activeSource.excerpt}&rdquo;
+            </blockquote>
+          </div>
         </div>
       )}
 
-      {/* 5. Interactive Instruction Hint */}
-      <div className="bg-muted/50 mt-3 flex items-center justify-between rounded-lg px-2.5 py-1.5 text-2xs text-muted-foreground">
-        <span className="flex items-center gap-1">
+      {/* 6. Quick Prompt Tester Pills */}
+      <div className="mt-3.5 flex flex-wrap items-center gap-1.5 border-t border-border/70 pt-2.5 text-2xs text-muted-foreground">
+        <span className="font-semibold text-foreground flex items-center gap-1">
           <Sparkles className="size-3 text-primary-strong" />
-          Interactive Demo: Click citations [1] or switch query tabs above
+          Quick Test:
         </span>
-        <span className="font-mono text-muted-foreground/75 hidden sm:inline">
-          Zero-GPU Engine
-        </span>
+        {PRESETS.map((preset) => (
+          <button
+            key={preset.id}
+            type="button"
+            onClick={() => handleSelectPreset(preset.id)}
+            className="cursor-pointer underline decoration-border hover:decoration-foreground hover:text-foreground font-medium"
+          >
+            &ldquo;{preset.shortLabel}&rdquo;
+          </button>
+        ))}
       </div>
     </div>
   );
