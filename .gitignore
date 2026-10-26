@@ -22,7 +22,7 @@ brag-output-*/
 
 # Personal career / resume working artifacts (kept local)
 CV_NEERAJ_SHIVKUMAR.md
-NEERAJ_SHIVKUMAR_RESUME.*
+NEERAJ_SHIVKUMAR_RESUME*
 generate_resume_docs.py
 resume_template.html
 interview-deck/

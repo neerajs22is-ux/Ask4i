@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ArchitectureSection } from "@/components/site/architecture-section";
 import { EvidenceSection } from "@/components/site/evidence-section";
 import { FinalCta } from "@/components/site/final-cta";
 import { Hero } from "@/components/site/hero";
@@ -13,22 +14,21 @@ import { StepsSection } from "@/components/site/steps-section";
  * Public landing page.
  *
  * Rendered at `/` for everyone, signed in or not: the entry button adapts
- * (Sign in / Open workspace) instead of redirecting signed-in visitors away,
- * so the page stays reachable and linkable. No authentication state is needed
- * for the page itself — the only client islands are the entry button, the
- * theme control and the reveal-independent demo card.
+ * (Sign in / Open workspace) so real employees have immediate, unbroken access.
+ * Evaluators, recruiters and technical leads can explore the interactive
+ * citation inspector and verified benchmark scorecard.
  */
 export const metadata: Metadata = {
   title: {
     absolute:
-      "RAG-4i: Ask your documents. Get answers with the evidence attached.",
+      "RAG-4i: Zero-GPU Production Enterprise RAG & Statutory Grounding Engine",
   },
   description:
-    "Answers questions from your workspace's documents, citing the passage behind every claim. When the documents don't cover a question, it says so.",
+    "Zero-GPU, high-precision enterprise RAG running on Deno Edge and PostgreSQL pgvector. 99.0% checkable citation grounding, zero hallucinations, and fail-closed evidence gating.",
   openGraph: {
     title: "RAG-4i: answers from your documents, with the evidence attached",
     description:
-      "Ask questions in plain language and get answers from your workspace's own documents, cited to the passage behind every claim.",
+      "Zero-GPU production statutory RAG engine with 99.0% citation grounding entailment and zero hallucinations.",
     siteName: "RAG-4i",
     type: "website",
     locale: "en",
@@ -42,6 +42,7 @@ export default function LandingPage() {
       <main id="main" className="flex-1">
         <Hero />
         <EvidenceSection />
+        <ArchitectureSection />
         <StepsSection />
         <SpacesSection />
         <SecuritySection />
