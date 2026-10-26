@@ -1,0 +1,414 @@
+{
+ "phase": "H3F",
+ "note": "Offline semantic-sufficiency judge study. Model: local qwen3-1.7b (LM Studio, temp 0, max_tokens 600). No gold facts in judge prompts. Separate from frozen benchmark; exploratory.",
+ "model": "qwen3-1.7b-local",
+ "temperature": 0,
+ "cases": {
+  "H3E-A-i": {
+   "previous": "What are the eligibility requirements for Category II AIFs?",
+   "followup": "And what certification does the key investment team need?",
+   "gold_sufficiency": "SUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The prior evidence explicitly states that the key investment team must have at least one member with relevant certification as specified by the Board.",
+     "prompt_tokens": 2043,
+     "completion_tokens": 191,
+     "latency_ms": 2926
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "PRIOR EVIDENCE explicitly states that the key investment team requires 'relevant certification' as specified by the Board.",
+     "prompt_tokens": 2099,
+     "completion_tokens": 305,
+     "latency_ms": 4845
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "PRIOR EVIDENCE mentions 'relevant certification as may be specified by the Board' but does not specify the exact certification required, leaving the answer ambiguous.",
+     "prompt_tokens": 2077,
+     "completion_tokens": 249,
+     "latency_ms": 3937
+    }
+   }
+  },
+  "H3E-A-ii": {
+   "previous": "What continuing interest must the Manager or Sponsor maintain in the fund?",
+   "followup": "Does that apply to Category III funds as well?",
+   "gold_sufficiency": "SUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "P1 explicitly states that for Category III funds, the continuing interest must be not less than 5% of the corpus or ten crore rupees, whichever is lower.",
+     "prompt_tokens": 2054,
+     "completion_tokens": 287,
+     "latency_ms": 4115
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "PRIOR EVIDENCE explicitly states that for Category III Alternative Investment Funds, the continuing interest shall be not less than five percent of the corpus or ten crore rupees, whichever is lower.",
+     "prompt_tokens": 2110,
+     "completion_tokens": 316,
+     "latency_ms": 4817
+    },
+    "C": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE explicitly states that for Category III Alternative Investment Funds, the continuing interest requirement is not less than five percent of the corpus or ten crore rupees, whichever is lower.",
+     "prompt_tokens": 2088,
+     "completion_tokens": 253,
+     "latency_ms": 4249
+    }
+   }
+  },
+  "H3E-A-iii": {
+   "previous": "What tenure extension is permitted for a migrated venture capital fund?",
+   "followup": "And what approval is needed for it?",
+   "gold_sufficiency": "SUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The prior evidence explicitly states that extensions may require approval of two-thirds of unit holders by value, directly answering the follow-up question about the approval needed.",
+     "prompt_tokens": 2102,
+     "completion_tokens": 239,
+     "latency_ms": 3598
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE explicitly states that extension of tenure requires approval from two-thirds of unit holders by value of their investment, directly answering the FOLLOW-UP question.",
+     "prompt_tokens": 2158,
+     "completion_tokens": 265,
+     "latency_ms": 3837
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "Prior evidence mentions approvals but does not specify the exact type (e.g., Board approval vs. unit holder approval) or clarify the required approval process for the specific scenario, leaving ambiguity about the requested fact.",
+     "prompt_tokens": 2136,
+     "completion_tokens": 304,
+     "latency_ms": 4452
+    }
+   }
+  },
+  "H3E-B-i": {
+   "previous": "What are the eligibility requirements for Category II AIFs?",
+   "followup": "And the key team's certification?",
+   "gold_sufficiency": "SUFFICIENT",
+   "gate_on_reuse": "SUPPORTED",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The prior evidence directly states that the key investment team must have at least one key personnel with relevant certification as specified by the Board.",
+     "prompt_tokens": 2040,
+     "completion_tokens": 162,
+     "latency_ms": 2589
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "PRIOR EVIDENCE explicitly states that the key investment team of the Manager of Alternative Investment Fund must have at least one key personnel with relevant certification as specified by the Board.",
+     "prompt_tokens": 2096,
+     "completion_tokens": 275,
+     "latency_ms": 4158
+    },
+    "C": {
+     "verdict": "UNPARSEABLE",
+     "rationale": "<think>\nOkay, let's tackle this. The user is asking if the PRIOR EVIDENCE is sufficient to answer the FOLLOW-UP question about the key team's certification.\n\nFirst, I need to look at the PRIOR EVIDENC",
+     "prompt_tokens": 2074,
+     "completion_tokens": 599,
+     "latency_ms": 7951
+    }
+   }
+  },
+  "H3E-B-ii": {
+   "previous": "What tenure extension is permitted for a migrated venture capital fund?",
+   "followup": "And the required majority?",
+   "gold_sufficiency": "SUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence mentions 'two-thirds of the unit holders by value of their investment' but does not specify what the required majority is, leaving the follow-up question unanswered.",
+     "prompt_tokens": 2099,
+     "completion_tokens": 285,
+     "latency_ms": 4160
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE explicitly states that extension of tenure requires approval from two-thirds of unit holders by value of their investment, directly answering the FOLLOW-UP question about the required majority.",
+     "prompt_tokens": 2155,
+     "completion_tokens": 320,
+     "latency_ms": 4601
+    },
+    "C": {
+     "verdict": "SUFFICIENT",
+     "rationale": "Prior evidence explicitly states that a two-thirds majority of unit holders by value of their investment is required for tenure extension under SEBI regulations, directly answering the follow-up question.",
+     "prompt_tokens": 2133,
+     "completion_tokens": 378,
+     "latency_ms": 5546
+    }
+   }
+  },
+  "H3E-C-i": {
+   "previous": "What are the eligibility requirements for Category II AIFs?",
+   "followup": "What about Category III?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "SUPPORTED",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence does not mention Category III AIFs, so it cannot directly answer the follow-up question.",
+     "prompt_tokens": 2038,
+     "completion_tokens": 202,
+     "latency_ms": 3240
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not explicitly mention Category III AIFs' eligibility requirements. It only discusses Category II and I, leaving Category III unspecified.",
+     "prompt_tokens": 2094,
+     "completion_tokens": 246,
+     "latency_ms": 4087
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "Prior evidence exclusively discusses Category II AIFs, omitting any mention of Category III, which is the subject of the follow-up question.",
+     "prompt_tokens": 2072,
+     "completion_tokens": 257,
+     "latency_ms": 4299
+    }
+   }
+  },
+  "H3E-D-i": {
+   "previous": "What is the minimum investment?",
+   "followup": "What about the lock-in for SME investments?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "UNPARSEABLE",
+     "rationale": "<think>\nOkay, let's tackle this. The previous question was about the minimum investment, and the follow-up is about the lock-in period for SME investments.\n\nFirst, I need to check if the prior evidenc",
+     "prompt_tokens": 2317,
+     "completion_tokens": 599,
+     "latency_ms": 8904
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "PRIOR EVIDENCE does not explicitly state the lock-in period for SME investments; it only mentions minimum investment thresholds and conditions for accredited investors, but not specific lock-in periods for SMEs.",
+     "prompt_tokens": 2373,
+     "completion_tokens": 510,
+     "latency_ms": 7570
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "Prior evidence discusses minimum investment thresholds for various investor categories (e.g., accredited investors, employees/directors) but does not specifically address lock-in periods for SME investments. The focus on different investor groups lacks direct relevance to SMEs.",
+     "prompt_tokens": 2351,
+     "completion_tokens": 486,
+     "latency_ms": 7265
+    }
+   }
+  },
+  "H3E-D-ii": {
+   "previous": "What is the minimum investment?",
+   "followup": "What about zorblex framistan?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "INSUFFICIENT",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence does not mention zorblex framistan, so it cannot answer the follow-up question about its minimum investment.",
+     "prompt_tokens": 2317,
+     "completion_tokens": 196,
+     "latency_ms": 3706
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "PRIOR EVIDENCE does not mention 'zorblex framistan' or any related facts about minimum investments for this entity.",
+     "prompt_tokens": 2373,
+     "completion_tokens": 264,
+     "latency_ms": 4719
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence does not mention 'zorblex framistan' or any related entities, nor does it address the specific question about their regulatory implications.",
+     "prompt_tokens": 2351,
+     "completion_tokens": 407,
+     "latency_ms": 6375
+    }
+   }
+  },
+  "H3E-E-i": {
+   "previous": "What is the single-company investment limit for Category III AIFs?",
+   "followup": "And for Category II?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "SUPPORTED",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "Prior evidence explicitly states that Category II Alternative Investment Funds may invest up to 25% of the investable funds in an investee company directly or through investment in units of other AIFs.",
+     "prompt_tokens": 2031,
+     "completion_tokens": 293,
+     "latency_ms": 4970
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not explicitly state the single-company investment limit for Category II Alternative Investment Funds. It only discusses Category III limits and related provisions, leaving Category II unspecified.",
+     "prompt_tokens": 2087,
+     "completion_tokens": 255,
+     "latency_ms": 4212
+    },
+    "C": {
+     "verdict": "UNPARSEABLE",
+     "rationale": "<think>\nOkay, let's tackle this. The user is asking if the prior evidence is sufficient to answer the follow-up question about the investment limits for Category II AIFs.\n\nFirst, I need to look at the",
+     "prompt_tokens": 2065,
+     "completion_tokens": 599,
+     "latency_ms": 8393
+    }
+   }
+  },
+  "H3E-E-ii": {
+   "previous": "What borrowing is permitted to Category II AIFs?",
+   "followup": "What about Category I?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "SUPPORTED",
+   "judge": {
+    "A": {
+     "verdict": "UNPARSEABLE",
+     "rationale": "{\"verdict\": \"SUFFICIENT\", \"rationale\": \"Prior evidence explicitly mentions that Category I AIFs may create encumbrance on equity of investee companies in infrastructure sectors, subject to specific co",
+     "prompt_tokens": 1903,
+     "completion_tokens": 599,
+     "latency_ms": 8272
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "PRIOR EVIDENCE does not explicitly state the borrowing permissions for Category I AIFs; it only discusses Category II's restrictions.",
+     "prompt_tokens": 1959,
+     "completion_tokens": 256,
+     "latency_ms": 4105
+    },
+    "C": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The prior evidence explicitly mentions Category I AIFs' borrowing restrictions in P6 and P7, directly addressing the follow-up question about Category I.",
+     "prompt_tokens": 1937,
+     "completion_tokens": 579,
+     "latency_ms": 8051
+    }
+   }
+  },
+  "H3E-F-i": {
+   "previous": "What conditions must shareholders meet for a qualifying amalgamation?",
+   "followup": "What about Category III AIFs?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not specifically address Category III AIFs, nor does it provide relevant conditions for them.",
+     "prompt_tokens": 1921,
+     "completion_tokens": 279,
+     "latency_ms": 4153
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not explicitly address Category III AIFs; it focuses on amalgamations in general, omitting specific details about AIFs.",
+     "prompt_tokens": 1977,
+     "completion_tokens": 327,
+     "latency_ms": 5324
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not mention Category III AIFs or relate to their tax treatment, despite discussing amalgamations, capital gains, and co-operative banks.",
+     "prompt_tokens": 1955,
+     "completion_tokens": 341,
+     "latency_ms": 5039
+    }
+   }
+  },
+  "H3E-G-i": {
+   "previous": "What is the minimum investment?",
+   "followup": "What about agricultural income under the Income-tax Act?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE does not address agricultural income under the Income-tax Act; it only discusses minimum investment thresholds for alternative investment funds.",
+     "prompt_tokens": 2318,
+     "completion_tokens": 216,
+     "latency_ms": 3705
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "PRIOR EVIDENCE does not mention agricultural income under the Income-tax Act.",
+     "prompt_tokens": 2374,
+     "completion_tokens": 284,
+     "latency_ms": 4841
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence discusses minimum investments in Alternative Investment Funds (AIFs) and related regulations, which do not address agricultural income under the Income-tax Act. The relevant facts about agricultural income are absent in the provided documents.",
+     "prompt_tokens": 2352,
+     "completion_tokens": 296,
+     "latency_ms": 4686
+    }
+   }
+  },
+  "H3E-H-i": {
+   "previous": "What is the probe seed number?",
+   "followup": "And the page numbers on the stamp?",
+   "gold_sufficiency": "AMBIGUOUS",
+   "gate_on_reuse": "PARTIAL",
+   "judge": {
+    "A": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence mentions page numbers (e.g., p.6, p.4) but does not explicitly state the page numbers on the stamp, which is what the follow-up asks.",
+     "prompt_tokens": 1804,
+     "completion_tokens": 300,
+     "latency_ms": 4309
+    },
+    "B": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The PRIOR EVIDENCE states page numbers (e.g., p.6, p.4) but does not explicitly mention the stamp's page numbers or link them to any specific entity.",
+     "prompt_tokens": 1860,
+     "completion_tokens": 575,
+     "latency_ms": 7698
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "The prior evidence does not mention page numbers or stamps, focusing instead on audit sections and thresholds.",
+     "prompt_tokens": 1838,
+     "completion_tokens": 260,
+     "latency_ms": 4274
+    }
+   }
+  },
+  "H3E-I-i": {
+   "previous": "What is an associate under the regulations?",
+   "followup": "And what is a sponsor?",
+   "gold_sufficiency": "INSUFFICIENT",
+   "gate_on_reuse": "SUPPORTED",
+   "judge": {
+    "A": {
+     "verdict": "SUFFICIENT",
+     "rationale": "The prior evidence directly defines 'sponsor' as a person holding more than 15% of equity in an AIF, with additional context from P4 and P7.",
+     "prompt_tokens": 2017,
+     "completion_tokens": 224,
+     "latency_ms": 3605
+    },
+    "B": {
+     "verdict": "SUFFICIENT",
+     "rationale": "PRIOR EVIDENCE explicitly states that 'Sponsor' is a term referenced in regulations regarding investment restrictions, confirming the exact fact about the exact entity.",
+     "prompt_tokens": 2073,
+     "completion_tokens": 351,
+     "latency_ms": 5429
+    },
+    "C": {
+     "verdict": "INSUFFICIENT",
+     "rationale": "Prior evidence mentions 'Sponsor' in regulatory contexts but does not explicitly define or clarify what a sponsor is, leaving the answer ambiguous without direct definition.",
+     "prompt_tokens": 2051,
+     "completion_tokens": 412,
+     "latency_ms": 6446
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1342 @@
+[
+ {
+  "claim_id": "S1-SUP-S8#c1",
+  "question_id": "S1-SUP-S8",
+  "claim_text": "Yes, AIRE is expressed in some skin tumors.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-01"
+  ],
+  "supporting_excerpt": "",
+  "reason": "S1 states Aire expression in tumor keratinocytes"
+ },
+ {
+  "claim_id": "S1-SUP-S8#c2",
+  "question_id": "S1-SUP-S8",
+  "claim_text": "The evidence indicates that autoimmune regulator (Aire) is inducibly expressed in human and mouse tumor keratinocytes in a keratin 17 (K17)-dependent manner .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-01"
+  ],
+  "supporting_excerpt": "",
+  "reason": "K17-dependent inducible expression verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-S8#c3",
+  "question_id": "S1-SUP-S8",
+  "claim_text": "Additionally, K17 is robustly upregulated in many tumors originating in stratified and pseudostratified epithelia, which includes skin tumors .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-01"
+  ],
+  "supporting_excerpt": "",
+  "reason": "K17 upregulation in tumors verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-S8#c4",
+  "question_id": "S1-SUP-S8",
+  "claim_text": "Aire expression in these tumor keratinocytes is required for timely onset of Gli2-induced skin tumorigenesis in mice .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-01"
+  ],
+  "supporting_excerpt": "",
+  "reason": "Gli2 onset requirement verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-S12#c1",
+  "question_id": "S1-SUP-S12",
+  "claim_text": "APOE4 expression in iPSC-derived neurons increases amyloid-\u03b2 (A\u03b2) production and tau phosphorylation, which is associated with GABAergic neuron degeneration .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "A-beta/tau/GABA findings verbatim in S1"
+ },
+ {
+  "claim_id": "S1-SUP-S12#c2",
+  "question_id": "S1-SUP-S12",
+  "claim_text": "Specifically, the text states that ApoE4-expressing neurons exhibited higher levels of tau phosphorylation and displayed GABAergic neuron degeneration, and that ApoE4 increased A\u03b2 production in human neurons .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "quoted measurements verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-S12#c3",
+  "question_id": "S1-SUP-S12",
+  "claim_text": "These findings were demonstrated in human induced pluripotent stem cell (iPSC)-derived neurons expressing ApoE4 .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "human iPSC context verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-T2#c1",
+  "question_id": "S1-SUP-T2",
+  "claim_text": "Yes, antibiotic-induced alterations in the gut microbiome reduce resistance against Clostridium difficile.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-05"
+  ],
+  "supporting_excerpt": "",
+  "reason": "title-level claim of S1"
+ },
+ {
+  "claim_id": "S1-SUP-T2#c2",
+  "question_id": "S1-SUP-T2",
+  "claim_text": "Antibiotics significantly disrupt the gut microbial community, leading to a reduction in colonization resistance against pathogens such as Clostridium difficile .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-05"
+  ],
+  "supporting_excerpt": "",
+  "reason": "colonization-resistance reduction verbatim"
+ },
+ {
+  "claim_id": "S1-SUP-T2#c3",
+  "question_id": "S1-SUP-T2",
+  "claim_text": "This disruption alters the gut metabolome, increasing levels of primary bile acids like taurocholate, which promote C. difficile germination, and providing carbon sources such as mannitol, fructose, sorbitol, raffinose, and stachyose that support its growth .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-05"
+  ],
+  "supporting_excerpt": "",
+  "reason": "taurocholate/mannitol specifics verified in full text"
+ },
+ {
+  "claim_id": "S1-SUP-T2#c4",
+  "question_id": "S1-SUP-T2",
+  "claim_text": "These changes collectively create a metabolic environment favorable for C. difficile infection .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-05"
+  ],
+  "supporting_excerpt": "",
+  "reason": "faithful summary of S1 mechanism"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c1",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "The evidence supports that open-access (OA) articles are more likely to be cited than non-OA articles in the same journal, particularly in the early months after publication.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "headline finding of S1"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c2",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "In a study comparing OA and non-OA articles in the Proceedings of the National Academy of Sciences (PNAS), OA articles were twice as likely to be cited 4 to 10 months after publication and almost three times as likely to be cited between 10 and 16 months after publication .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "2x/3x figures verified in full text"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c3",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "This citation advantage is attributed to the immediate availability of OA articles, as non-OA articles in PNAS were subject to a six-month toll-access delay before becoming publicly available .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "six-month toll delay verified"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c4",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "The study controlled for multiple factors, including article type, number of authors, subject area, and author citation history, strengthening the validity of the findings .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "controlled-factors claim verified"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c5",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "However, the evidence does not establish whether this citation advantage persists over longer periods, as the analysis covered only the first 16 months after publication .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: 16-month window is the analysis bound everywhere"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c6",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "Additionally, the evidence does not support generalization to all traditional journals, as the study was limited to PNAS, a journal offering a hybrid OA option .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: PNAS-only scope stated throughout"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c7",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "The text suggests that disparities in citation rates might be greater in journals with longer access delays or no open-access options, but this is not directly demonstrated .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "hedged suggestion consistent with evidence limits"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c8",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "Therefore, based on the evidence, it is established that open-access articles in PNAS were more likely to be cited than non-OA articles within the first 16 months after publication .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-07"
+  ],
+  "supporting_excerpt": "",
+  "reason": "scoped restatement of headline"
+ },
+ {
+  "claim_id": "S1-SUP-T7#c9",
+  "question_id": "S1-SUP-T7",
+  "claim_text": "What cannot be established from the evidence is whether this pattern holds across all traditional journals or over longer time periods.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: no cross-journal/long-term data in evidence"
+ },
+ {
+  "claim_id": "S1-CON-S9#c1",
+  "question_id": "S1-CON-S9",
+  "claim_text": "The claim that ALDH1 expression is associated with better breast cancer outcomes is not supported by the evidence.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: evidence (poor-prognosis title) contradicts original claim"
+ },
+ {
+  "claim_id": "S1-CON-S9#c2",
+  "question_id": "S1-CON-S9",
+  "claim_text": "Instead, the evidence indicates that ALDH1 expression correlates with poor prognosis in breast cancer.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-02"
+  ],
+  "supporting_excerpt": "",
+  "reason": "poor-prognosis correlation verbatim"
+ },
+ {
+  "claim_id": "S1-CON-S9#c3",
+  "question_id": "S1-CON-S9",
+  "claim_text": "Specifically, in a series of 577 breast carcinomas, \"expression of ALDH1 detected by immunostaining correlated with poor prognosis\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-02"
+  ],
+  "supporting_excerpt": "",
+  "reason": "577-case quote verified in full text"
+ },
+ {
+  "claim_id": "S1-CON-S9#c4",
+  "question_id": "S1-CON-S9",
+  "claim_text": "Therefore, ALDH1 expression is associated with worse, not better, clinical outcomes in breast cancer.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-02"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct conclusion from S1"
+ },
+ {
+  "claim_id": "S1-CON-S11#c1",
+  "question_id": "S1-CON-S11",
+  "claim_text": "The evidence does not support the claim that AMP-activated protein kinase (AMPK) activation increases inflammation-related fibrosis in the lungs.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: AMPK-low-in-fibrosis contradicts activation-increases claim"
+ },
+ {
+  "claim_id": "S1-CON-S11#c2",
+  "question_id": "S1-CON-S11",
+  "claim_text": "Instead,  states that AMPK activity is lower in fibrotic regions of the lungs in humans with idiopathic pulmonary fibrosis (IPF) and in a mouse model of lung fibrosis.",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-11"
+  ],
+  "supporting_excerpt": "",
+  "reason": "lower AMPK in IPF regions verbatim"
+ },
+ {
+  "claim_id": "S1-CON-S11#c3",
+  "question_id": "S1-CON-S11",
+  "claim_text": "It further reports that pharmacological activation of AMPK reduces fibrotic activity in myofibroblasts from IPF patients and that metformin, an AMPK activator, accelerates the resolution of established fibrosis in a bleomycin mouse model in an AMPK-dependent manner .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-11"
+  ],
+  "supporting_excerpt": "",
+  "reason": "metformin/bleomycin reversal verified in full text"
+ },
+ {
+  "claim_id": "S1-CON-S11#c4",
+  "question_id": "S1-CON-S11",
+  "claim_text": "This suggests that AMPK activation is associated with reduced fibrosis rather than increased fibrosis.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-11"
+  ],
+  "supporting_excerpt": "",
+  "reason": "faithful inference from S1"
+ },
+ {
+  "claim_id": "S1-CON-S11#c5",
+  "question_id": "S1-CON-S11",
+  "claim_text": "Therefore, based on the provided evidence, AMPK activation does not increase lung fibrosis; it appears to promote the reversal of established fibrosis .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-11"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct conclusion from S1"
+ },
+ {
+  "claim_id": "S1-CON-S13#c1",
+  "question_id": "S1-CON-S13",
+  "claim_text": "The evidence indicates that APOE4 expression in induced pluripotent stem cell (iPSC)-derived neurons increases amyloid-\u03b2 (A\u03b2) production and tau phosphorylation .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "A-beta/tau findings verbatim"
+ },
+ {
+  "claim_id": "S1-CON-S13#c2",
+  "question_id": "S1-CON-S13",
+  "claim_text": "Specifically, \"ApoE4-expressing neurons had higher levels of tau phosphorylation\" and \"ApoE4 increased A\u03b2 production in human, but not in mouse, neurons\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "quoted measurements verbatim"
+ },
+ {
+  "claim_id": "S1-CON-S13#c3",
+  "question_id": "S1-CON-S13",
+  "claim_text": "However, the evidence does not support that APOE4 delays GABA neuron degeneration.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: no delay statement anywhere in evidence"
+ },
+ {
+  "claim_id": "S1-CON-S13#c4",
+  "question_id": "S1-CON-S13",
+  "claim_text": "On the contrary, the text states that ApoE4-expressing neurons \"displayed GABAergic neuron degeneration\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "displayed-degeneration quote contradicts delay"
+ },
+ {
+  "claim_id": "S1-CON-S13#c5",
+  "question_id": "S1-CON-S13",
+  "claim_text": "Therefore, the claim that APOE4 delays GABA neuron degeneration is not supported by the evidence and is contradicted by it.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct conclusion from S1"
+ },
+ {
+  "claim_id": "S1-CON-S12NEG#c1",
+  "question_id": "S1-CON-S12NEG",
+  "claim_text": "The claim that APOE4 expression in iPSC-derived neurons reduces tau phosphorylation and protects against GABAergic neuron degeneration is incorrect based on the evidence provided.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: evidence states the opposite on both points"
+ },
+ {
+  "claim_id": "S1-CON-S12NEG#c2",
+  "question_id": "S1-CON-S12NEG",
+  "claim_text": "The evidence states that \"ApoE4-expressing neurons had higher levels of tau phosphorylation\" and \"displayed GABAergic neuron degeneration\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "higher-tau/displayed-degeneration quotes verbatim"
+ },
+ {
+  "claim_id": "S1-CON-S12NEG#c3",
+  "question_id": "S1-CON-S12NEG",
+  "claim_text": "These findings indicate that APOE4 expression is associated with increased tau phosphorylation and neurodegeneration, not a reduction or protective effect.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct inference from S1"
+ },
+ {
+  "claim_id": "S1-CON-S12NEG#c4",
+  "question_id": "S1-CON-S12NEG",
+  "claim_text": "Therefore, APOE4 expression exacerbates, rather than protects against, these pathological features in human iPSC-derived neurons .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-03"
+  ],
+  "supporting_excerpt": "",
+  "reason": "exacerbates-conclusion follows from S1"
+ },
+ {
+  "claim_id": "S1-NOI-0#c1",
+  "question_id": "S1-NOI-0",
+  "claim_text": "The provided evidence does not address aspirin or its effects on prostaglandin E2 (PGE2) production.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: aspirin/PGE2 in none of 8 chunks"
+ },
+ {
+  "claim_id": "S1-NOI-0#c2",
+  "question_id": "S1-NOI-0",
+  "claim_text": "Therefore, it cannot be established from the given texts whether aspirin inhibits PGE2 production.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: same whole-set scan"
+ },
+ {
+  "claim_id": "S1-NOI-0#c3",
+  "question_id": "S1-NOI-0",
+  "claim_text": "To determine this, one would need to consult sources detailing aspirin\u2019s mechanism of action, particularly its inhibition of cyclooxygenase (COX) enzymes involved in prostaglandin synthesis.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler, no factual content"
+ },
+ {
+  "claim_id": "S1-NOI-3#c1",
+  "question_id": "S1-NOI-3",
+  "claim_text": "The provided evidence does not contain any information about autologous transplantation of mesenchymal stem cells, induction therapy with anti-interleukin-2 receptor antibodies, or comparative rates of opportunistic infections between these treatments.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: MSC/induction/infection-compare in none of 8"
+ },
+ {
+  "claim_id": "S1-NOI-3#c2",
+  "question_id": "S1-NOI-3",
+  "claim_text": "Therefore, it cannot be established from the evidence whether autologous transplantation of mesenchymal stem cells causes a higher rate of opportunistic infections than induction therapy with anti-interleukin-2 receptor antibodies.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: same scan"
+ },
+ {
+  "claim_id": "S1-NOI-3#c3",
+  "question_id": "S1-NOI-3",
+  "claim_text": "No cited evidence discusses mesenchymal stem cells, anti-interleukin-2 receptor antibodies, immunosuppressive regimens, or infection outcomes related to these therapies.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence restated with scope note"
+ },
+ {
+  "claim_id": "S1-NOI-3#c4",
+  "question_id": "S1-NOI-3",
+  "claim_text": "To evaluate the claim, evidence would need to include clinical trial data or observational studies comparing infection rates following these specific interventions.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler"
+ },
+ {
+  "claim_id": "S1-NOI-6#c1",
+  "question_id": "S1-NOI-6",
+  "claim_text": "The provided evidence does not address the impact of bariatric surgery on mental health.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: bariatric/mental-health in none of 8"
+ },
+ {
+  "claim_id": "S1-NOI-6#c2",
+  "question_id": "S1-NOI-6",
+  "claim_text": "None of the retrieved documents mention bariatric surgery, mental health, or related outcomes.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence restated"
+ },
+ {
+  "claim_id": "S1-NOI-6#c3",
+  "question_id": "S1-NOI-6",
+  "claim_text": "Therefore, it cannot be established from the evidence whether bariatric surgery has a positive impact on mental health.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence conclusion"
+ },
+ {
+  "claim_id": "S1-NOI-6#c4",
+  "question_id": "S1-NOI-6",
+  "claim_text": "To investigate this claim, one would need to examine studies that specifically assess mental health outcomes following bariatric surgery.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler"
+ },
+ {
+  "claim_id": "S1-NOI-8#c1",
+  "question_id": "S1-NOI-8",
+  "claim_text": "The provided evidence does not address the interaction between TDP-43 and respiratory complex I proteins ND3 and ND6, nor does it discuss the effects of blocking this interaction on neuronal loss.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: TDP-43/ND3/ND6 in none of 8"
+ },
+ {
+  "claim_id": "S1-NOI-8#c2",
+  "question_id": "S1-NOI-8",
+  "claim_text": "Therefore, it cannot be established from the evidence whether blocking the interaction between TDP-43 and ND3 or ND6 leads to increased TDP-43-induced neuronal loss.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence restated"
+ },
+ {
+  "claim_id": "S1-NOI-8#c3",
+  "question_id": "S1-NOI-8",
+  "claim_text": "No relevant information is present in the cited blocks  through  to support or refute this claim.",
+  "citations": [
+   1,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ext-scifact-08",
+   "ext-scifact-15"
+  ],
+  "supporting_excerpt": "",
+  "reason": "absence over cited blocks verified (CMA liver + CR abstracts)"
+ },
+ {
+  "claim_id": "S2-SUP-A1#c1",
+  "question_id": "S2-SUP-A1",
+  "claim_text": "The short title of the Income-tax Act, 2025 is \"Income-tax Act, 2025\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  ],
+  "supporting_excerpt": "",
+  "reason": "short-title sentence verbatim in S1"
+ },
+ {
+  "claim_id": "S2-SUP-CA01#c1",
+  "question_id": "S2-SUP-CA01",
+  "claim_text": "Under the SEBI AIF Regulations, \"associate\" means a company or a limited liability partnership or a body corporate in which a director or trustee or partner or Sponsor or Manager of the Alternative Investment Fund or a director or partner of the Manager or Sponsor holds, either individually or collectively, more than fifteen percent of its paid-up equity share capital or partnership interest, as the case may be .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15"
+  ],
+  "supporting_excerpt": "",
+  "reason": "associate definition quoted verbatim"
+ },
+ {
+  "claim_id": "S2-SUP-G1#c1",
+  "question_id": "S2-SUP-G1",
+  "claim_text": "After the Finance Act, 2026 amendment, \"co-operative society\" is defined as a co-operative society registered under the Co-operative Societies Act, 1912 (2 of 1912), or the Multi-State Co-operative Societies Act, 2002 (39 of 2002), or under any other law in force in any State or Union territory for the registration of co-operative societies .",
+  "citations": [
+   2
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "d90116502b52e95bb8515ba31a5d615bc1891752d64de1d48cb1ba5a666f8659"
+  ],
+  "supporting_excerpt": "",
+  "reason": "32-definition verbatim in S2"
+ },
+ {
+  "claim_id": "S2-SUP-G1#c2",
+  "question_id": "S2-SUP-G1",
+  "claim_text": "This definition is also repeated in , though without additional detail.",
+  "citations": [
+   3
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "8353590c4bddffff6ed2278a4cb5fb55e7ae29197de9070f29835135f16893c8"
+  ],
+  "supporting_excerpt": "",
+  "reason": "S3 continues the definition text"
+ },
+ {
+  "claim_id": "S2-CON-A1Y#c1",
+  "question_id": "S2-CON-A1Y",
+  "claim_text": "No, this is not correct.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: correct verdict on 2025-vs-2024"
+ },
+ {
+  "claim_id": "S2-CON-A1Y#c2",
+  "question_id": "S2-CON-A1Y",
+  "claim_text": "The short title of the Act is stated in  as \"the Income-tax Act, 2025\" .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  ],
+  "supporting_excerpt": "",
+  "reason": "2025 title quote verbatim"
+ },
+ {
+  "claim_id": "S2-CON-A1Y#c3",
+  "question_id": "S2-CON-A1Y",
+  "claim_text": "Therefore, the claim that the short title is \"the Income-tax Act, 2024\" cannot be established from the evidence and is incorrect based on the provided text.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct conclusion from S1"
+ },
+ {
+  "claim_id": "S2-CON-A1F#c1",
+  "question_id": "S2-CON-A1F",
+  "claim_text": "No, this is not correct.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: correct verdict on 2026-vs-2025"
+ },
+ {
+  "claim_id": "S2-CON-A1F#c2",
+  "question_id": "S2-CON-A1F",
+  "claim_text": "The evidence states that the Income-tax Act, 2025 \"shall come into force on the 1st April, 2026,\" save as otherwise provided in the Act .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  ],
+  "supporting_excerpt": "",
+  "reason": "1st April 2026 quote verbatim"
+ },
+ {
+  "claim_id": "S2-CON-A1F#c3",
+  "question_id": "S2-CON-A1F",
+  "claim_text": "Therefore, the claim that it came into force on 1st April 2025 is not supported by the evidence.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  ],
+  "supporting_excerpt": "",
+  "reason": "correct conclusion from S1"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c1",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "No, this is not correct.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: conflict genuinely present (Cat III vs angel-fund provisions)"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c2",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "There is a conflict in the provided evidence regarding the required continuing interest of the Manager or Sponsor in Category III Alternative Investment Funds.\n\n- One position states that for Category III Alternative Investment Funds, the Manager or Sponsor shall have a continuing interest of not less than **five percent of the corpus or ten crore rupees, whichever is lower** .\n\n- Another position, specific to **angel funds**, states that the Manager or Sponsor shall have a continuing interest of not less than **half percent of the amount invested or fifty thousand rupees, whichever is higher** .",
+  "citations": [
+   1,
+   3
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+   "00d4334e5338362055ee53d612ba006993d273f76e9b572227859e6e1f7488f5"
+  ],
+  "supporting_excerpt": "",
+  "reason": "conflict characterized across cited blocks"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c3",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "However, this provision applies specifically to angel funds, which are a subset of Category I AIFs, not Category III.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "angel-subset-of-Cat-I scope note consistent with evidence"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c4",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "The claim that the required interest is **fifty percent of the corpus** for Category III funds does not appear in any of the provided evidence blocks.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: fifty-percent-of-corpus in no block"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c5",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "Therefore, based solely on the retrieved evidence, the statement in the question is incorrect.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: correct incorrectness verdict"
+ },
+ {
+  "claim_id": "S2-CON-CA12#c6",
+  "question_id": "S2-CON-CA12",
+  "claim_text": "The correct requirement per  for Category III funds is **five percent of the corpus or ten crore rupees, whichever is lower**.",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de"
+  ],
+  "supporting_excerpt": "",
+  "reason": "five-percent/ten-crore per prior H3E attestation of this evidence"
+ },
+ {
+  "claim_id": "S2-NOI-F1#c1",
+  "question_id": "S2-NOI-F1",
+  "claim_text": "The provided evidence does not contain any information about the GST rate applicable to interior design services.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: GST/interior-design in none of 8"
+ },
+ {
+  "claim_id": "S2-NOI-F1#c2",
+  "question_id": "S2-NOI-F1",
+  "claim_text": "Therefore, it cannot be established from the evidence what the GST rate is for such services.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence restated"
+ },
+ {
+  "claim_id": "S2-NOI-F1#c3",
+  "question_id": "S2-NOI-F1",
+  "claim_text": "To determine the applicable GST rate, one would need to consult provisions related to GST classification and rates, such as those found in the GST Act or relevant notifications specifying tax rates for services under the appropriate SAC (Services Accounting Code).",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler"
+ },
+ {
+  "claim_id": "S2-NOI-F1#c4",
+  "question_id": "S2-NOI-F1",
+  "claim_text": "These provisions are not included in the provided evidence.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: provisions not in evidence"
+ },
+ {
+  "claim_id": "S2-NOI-F2#c1",
+  "question_id": "S2-NOI-F2",
+  "claim_text": "The provided evidence does not contain any information regarding liability to wealth-tax on urban land.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: wealth-tax/urban-land in none of 8"
+ },
+ {
+  "claim_id": "S2-NOI-F2#c2",
+  "question_id": "S2-NOI-F2",
+  "claim_text": "None of the cited sources  through  mention wealth-tax, urban land in the context of wealth-tax, or any provisions related to the Wealth Tax Act.",
+  "citations": [
+   1,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "26b6ee1f8728e7ce84d28cd433d1666eb15d74125522d7da8f1c5a198aabe4a5",
+   "6d9247d1a27f71e2d097195ffe3e0844882e6a9c243381a450dc060c77166d55"
+  ],
+  "supporting_excerpt": "",
+  "reason": "absence over cited range verified"
+ },
+ {
+  "claim_id": "S2-NOI-F2#c3",
+  "question_id": "S2-NOI-F2",
+  "claim_text": "Therefore, based solely on the given evidence, it is not possible to determine whether a person is liable to wealth-tax on urban land.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence conclusion"
+ },
+ {
+  "claim_id": "S2-NOI-F2#c4",
+  "question_id": "S2-NOI-F2",
+  "claim_text": "No conflicting positions on this specific question are present in the evidence.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "no-conflict claim holds (no wealth-tax content to conflict)"
+ },
+ {
+  "claim_id": "S2-NOI-F2#c5",
+  "question_id": "S2-NOI-F2",
+  "claim_text": "The documents referenced pertain to the Income-tax Act and discuss topics such as income from house property, inclusions in total income, and tax treatment of political parties, but they do not address wealth-tax or its applicability to urban land , , , , , , , .",
+  "citations": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "26b6ee1f8728e7ce84d28cd433d1666eb15d74125522d7da8f1c5a198aabe4a5",
+   "673c024cf67d652d8d1b9e3728fea8256c1ee769ef7d18c5b943cc51274c0c7e",
+   "d7acd09f0614cf1dc76ad8fa31d145e109068d3b20e60d3eb1f6ecf7155d0e70",
+   "d91dfc709c7254061fb1692d068ee3d2f0de0d4b07207be4b44a2750a2dfe6f0",
+   "d11783d1a78577fbbf0bb87b1511113f1bd2dd787cb3ad9a1d73d88890fe0f76",
+   "d816216d20c4e9bea1e03cc3833e4fb950e82100150ca2a0084d1ed5df6c5d44",
+   "9cb6dcc5b6381416468cfdc89b93d572a80f9abbaa339c0a52606a8bf393e1cd",
+   "6d9247d1a27f71e2d097195ffe3e0844882e6a9c243381a450dc060c77166d55"
+  ],
+  "supporting_excerpt": "",
+  "reason": "topic summary + absence, all cited blocks scanned"
+ },
+ {
+  "claim_id": "FZ-E3#c1",
+  "question_id": "FZ-E3",
+  "claim_text": "The provided evidence does not contain any information about section 202(1) or the standard deduction regime under that section.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: 202(1)/standard-deduction-regime not in 8 chunks"
+ },
+ {
+  "claim_id": "FZ-E3#c2",
+  "question_id": "FZ-E3",
+  "claim_text": "Therefore, it cannot be established from the given evidence who is eligible for the section 202(1) standard deduction regime.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence conclusion"
+ },
+ {
+  "claim_id": "FZ-E3#c3",
+  "question_id": "FZ-E3",
+  "claim_text": "To determine eligibility, one would need to refer to the actual text of section 202(1) of the Income Tax Act, which is not included in the provided evidence blocks.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler"
+ },
+ {
+  "claim_id": "FZ-C2#c1",
+  "question_id": "FZ-C2",
+  "claim_text": "The standard deduction in any other case (not under section 202(1)) is stated to be \u20b950,000 or the salary, whichever is less .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614"
+  ],
+  "supporting_excerpt": "",
+  "reason": "50000-or-salary verbatim in S1"
+ },
+ {
+  "claim_id": "FZ-C2#c2",
+  "question_id": "FZ-C2",
+  "claim_text": "No other evidence block provides a conflicting figure for the standard deduction in this context.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: no other block contradicts the scoped figure (75000 is a different case)"
+ },
+ {
+  "claim_id": "FZ-C2#c3",
+  "question_id": "FZ-C2",
+  "claim_text": "Therefore, based on the provided evidence, the position from  stands uncontradicted.",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614"
+  ],
+  "supporting_excerpt": "",
+  "reason": "uncontradicted-position conclusion follows"
+ },
+ {
+  "claim_id": "FZ-G4#c1",
+  "question_id": "FZ-G4",
+  "claim_text": "The evidence presents conflicting information regarding the status of dividend sub-clause (f) and co-operative clause (32) under the Finance Act, 2026.\n\n**On dividend sub-clause (f):**  \n- One position is that sub-clause (f), which pertained to \"any payment by a company on purchase of its own shares from a shareholder as per section 68 of the Companies Act, 2013,\" was **omitted** by the Finance Act, 2026, effective from 1-4-2026 .  \n- Another position is that sub-clause (f) was **substituted** by the Finance Act, 2026, effective from 1-4-2026, and that prior to substitution, it dealt with dividend inclusion in the total income of an assessee .  \n- Additionally,  references a prior version of sub-sections related to section 2(40)(f) concerning buy-back of shares, indicating that the provision was **substituted**, not omitted, by the Finance Act, 2026 .",
+  "citations": [
+   1,
+   3,
+   4
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "849fd08712d57d450170f30b49ab4b5dd94a4ddf5398ac7b06f456c4b5d6f96f",
+   "27e934ec09d9ac719b714dcdb5ffe0bd0b77405741d2a87809d3539e7fed5dc0",
+   "f9ce63327b5c767b52c9e6ccb5e8606567eeac9387ce88c49eccd13fbae68de8"
+  ],
+  "supporting_excerpt": "",
+  "reason": "omitted-vs-substituted conflict genuinely across cited blocks"
+ },
+ {
+  "claim_id": "FZ-G4#c2",
+  "question_id": "FZ-G4",
+  "claim_text": "Thus, the sources conflict on whether sub-clause (f) was *omitted*  or *substituted* , .\n\n**On co-operative clause (32):**  \n- One position is that clause (32), defining \"co-operative society,\" was **substituted** by the Finance Act, 2026, effective from 1-4-2026, and now includes registration under the Co-operative Societies Act, 1912, the Multi-State Co-operative Societies Act, 2002, or any other state law .  \n- However,  states that clause (32) was **substituted** by the Finance Act, 2026, but describes a different prior text relating to demerger conditions, which appears factually inconsistent with the subject matter of a \"co-operative society\" definition .",
+  "citations": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "849fd08712d57d450170f30b49ab4b5dd94a4ddf5398ac7b06f456c4b5d6f96f",
+   "9fe6005b078605f86fcdd9dc0d395093445d5b848db08acebb9ae524fe76b0c7",
+   "27e934ec09d9ac719b714dcdb5ffe0bd0b77405741d2a87809d3539e7fed5dc0",
+   "f9ce63327b5c767b52c9e6ccb5e8606567eeac9387ce88c49eccd13fbae68de8",
+   "81ab2d532a13ffaa9f33aaa1a3d7b43905c5a703b4a950469f2df7c6dadeeb2d"
+  ],
+  "supporting_excerpt": "",
+  "reason": "conflict restated across blocks"
+ },
+ {
+  "claim_id": "FZ-G4#c3",
+  "question_id": "FZ-G4",
+  "claim_text": "Therefore, while both  and  agree that clause (32) was substituted by FA 2026, they **conflict on the content and context** of the substitution\u2014 provides a coherent definition of \"co-operative society,\" whereas  incorrectly associates the substitution with demerger provisions , .",
+  "citations": [
+   2,
+   6
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "9fe6005b078605f86fcdd9dc0d395093445d5b848db08acebb9ae524fe76b0c7",
+   "81ab2d532a13ffaa9f33aaa1a3d7b43905c5a703b4a950469f2df7c6dadeeb2d"
+  ],
+  "supporting_excerpt": "",
+  "reason": "clause-32 content conflict across cited blocks"
+ },
+ {
+  "claim_id": "FZ-G4#c4",
+  "question_id": "FZ-G4",
+  "claim_text": "In summary:  \n- Sources **disagree** on whether sub-clause (f) was *omitted*  or *substituted* , .  \n- Sources **conflict in content** regarding clause (32), with  providing a relevant definition of \"co-operative society\" post-substitution, while  misattributes the substitution to unrelated demerger conditions.",
+  "citations": [
+   1,
+   2,
+   3,
+   4,
+   6
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "849fd08712d57d450170f30b49ab4b5dd94a4ddf5398ac7b06f456c4b5d6f96f",
+   "9fe6005b078605f86fcdd9dc0d395093445d5b848db08acebb9ae524fe76b0c7",
+   "27e934ec09d9ac719b714dcdb5ffe0bd0b77405741d2a87809d3539e7fed5dc0",
+   "f9ce63327b5c767b52c9e6ccb5e8606567eeac9387ce88c49eccd13fbae68de8",
+   "81ab2d532a13ffaa9f33aaa1a3d7b43905c5a703b4a950469f2df7c6dadeeb2d"
+  ],
+  "supporting_excerpt": "",
+  "reason": "faithful conflict summary"
+ },
+ {
+  "claim_id": "FZ-F3#c1",
+  "question_id": "FZ-F3",
+  "claim_text": "The provided evidence does not specify which ITR form a salaried individual should file.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence: ITR forms in none of 8"
+ },
+ {
+  "claim_id": "FZ-F3#c2",
+  "question_id": "FZ-F3",
+  "claim_text": "While the documents discuss income from \"Salaries\" and related tax provisions , , , , they do not mention or identify particular ITR forms (such as ITR-1, ITR-2, etc.) that a salaried individual must use for filing.",
+  "citations": [
+   2,
+   3,
+   7,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "c0308e8f9cbdcb0dc6d2e4b6cdd682cb39f82c50e978f4ef2b2e54e8c66d2bae",
+   "8db5240e6d43cea76ae51fd5f3b4e1104a7f43b8e32102e809eb6ae00402c71b",
+   "94d569dc785351d5c0883dc6c71a3ee229f2332ac5347958f7f61383ec4c4740",
+   "baf940d045718c216d14a5e0071eeba05f6e2e171c4cc687a8ad47297facd092"
+  ],
+  "supporting_excerpt": "",
+  "reason": "absence over cited blocks (salaries discussed, forms never named)"
+ },
+ {
+  "claim_id": "FZ-F3#c3",
+  "question_id": "FZ-F3",
+  "claim_text": "Therefore, based on the evidence:\n- It cannot be established which ITR form a salaried individual should file.\n- The text does not contain information about ITR form classifications or eligibility criteria for choosing a form.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "absence conclusion"
+ },
+ {
+  "claim_id": "FZ-F3#c4",
+  "question_id": "FZ-F3",
+  "claim_text": "To determine the correct ITR form, one would need to consult provisions or instructions that specify form applicability based on income sources, residential status, and other criteria\u2014such as those potentially found in official ITR filing guidelines or relevant sections of the Income-tax Rules.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "guidance filler"
+ },
+ {
+  "claim_id": "FZ-D1#c1",
+  "question_id": "FZ-D1",
+  "claim_text": "Which two documents should I compare?",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "clarification question, not a claim"
+ },
+ {
+  "claim_id": "FZ-D1#c2",
+  "question_id": "FZ-D1",
+  "claim_text": "Please name both files.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "clarification question, not a claim"
+ },
+ {
+  "claim_id": "FZ-B1#c1",
+  "question_id": "FZ-B1",
+  "claim_text": "Which two documents should I compare?",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "clarification question, not a claim"
+ },
+ {
+  "claim_id": "FZ-B1#c2",
+  "question_id": "FZ-B1",
+  "claim_text": "Please name both files.",
+  "citations": [],
+  "expected_label": "NOT_CHECKABLE",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "clarification question, not a claim"
+ },
+ {
+  "claim_id": "FZ-A3#c1",
+  "question_id": "FZ-A3",
+  "claim_text": "The definition of \"tax year\" is addressed in the provided evidence, but there are conflicting descriptions across the sources.\n\n- One position, supported by , defines \"tax year\" as \"the twelve months period of the financial year commencing on the 1st April.\" It further clarifies that for a newly set up business or a newly arising source of income, the tax year is the period beginning on the date of setup or the date the income source comes into existence, and ending with the financial year.\n\n- Another position, reflected in , uses the term \"tax year\" in the context of a \"year of commercial production,\" defining it as \"the tax year in which... commercial production of any mineral or any one or more of the minerals... commences.\" Additionally, it refers to \"relevant tax years\" as \"the ten tax years beginning with the year of commercial production,\" implying a context-specific use of \"tax year\" tied to commercial activity.",
+  "citations": [
+   1,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "2a75ef31ea20035ea13ad8f534988b34a7c157657f57fdd00966efbea7be4e2f",
+   "81db70f6b71e16c86dec96e9066867de79c465af06c2616726f64ece251875a8"
+  ],
+  "supporting_excerpt": "",
+  "reason": "twelve-months vs commercial-production conflict across cited blocks"
+ },
+ {
+  "claim_id": "FZ-A3#c2",
+  "question_id": "FZ-A3",
+  "claim_text": "The sources conflict on whether \"tax year\" is strictly a calendar-based financial period starting April 1st , or if it can be a variable period anchored to commercial or operational milestones such as the start of mineral production .",
+  "citations": [
+   1,
+   8
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "2a75ef31ea20035ea13ad8f534988b34a7c157657f57fdd00966efbea7be4e2f",
+   "81db70f6b71e16c86dec96e9066867de79c465af06c2616726f64ece251875a8"
+  ],
+  "supporting_excerpt": "",
+  "reason": "conflict restated across blocks"
+ },
+ {
+  "claim_id": "FZ-A3#c3",
+  "question_id": "FZ-A3",
+  "claim_text": "The exact point of disagreement is whether \"tax year\" is uniformly defined as a fixed financial period or if it can be contextually redefined based on specific activities like commercial production.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "meta: disagreement-point characterization follows"
+ },
+ {
+  "claim_id": "FZ-C5#c1",
+  "question_id": "FZ-C5",
+  "claim_text": "Under section 29(1)(b), an employer may deduct a contribution towards a pension scheme referred to in section 124 up to 14% of the employee's salary in the tax year, where the salary includes dearness allowance if so provided by the terms of employment, but excludes all other allowances and perquisites .",
+  "citations": [
+   2
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "df46a6c587763f1894da821aef28ddcbc562802b5fafbec0e7b2761e965cc0a9"
+  ],
+  "supporting_excerpt": "",
+  "reason": "29(1)(b)/14%/dearness/124 verified in S2 full text"
+ },
+ {
+  "claim_id": "FZ-G2#c1",
+  "question_id": "FZ-G2",
+  "claim_text": "The annual value of a property held as stock-in-trade is taken as nil for up to two years from the end of the financial year in which the certificate for completion of construction is obtained from the competent authority .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "b4089ea58d2562d22a0113773e33f68569833c82f9c5777810d969d4c1aaec4c"
+  ],
+  "supporting_excerpt": "",
+  "reason": "nil-up-to-two-years verbatim in S1"
+ },
+ {
+  "claim_id": "FZ-G2#c2",
+  "question_id": "FZ-G2",
+  "claim_text": "This provision was amended by the Finance Act, 2026, effective from 1-4-2026, which substituted \u201cnil for\u201d with \u201cnil up to\u201d [S1, S2].",
+  "citations": [],
+  "expected_label": "UNSUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "FA-2026 effective date 1-4-2026 not present in supplied evidence (parametric leak); extractor also missed its [S1, S2] markers"
+ },
+ {
+  "claim_id": "FZ-E1#c1",
+  "question_id": "FZ-E1",
+  "claim_text": "The retrieved evidence contains conflicting information regarding the amount of deduction allowed for \"other gratuity\" received by an employee, specifically in relation to whether the entire amount is deductible or only a limited amount based on specific calculations.\n\n**Position 1: Entire amount of gratuity is deductible**  \nAccording to , certain gratuities qualify for full deduction:\n- Death-cum-retirement gratuity referred to in sub-section (2)(g) is eligible for \"Entire amount\" deduction .\n- Retiring gratuity received under the Pension Code or Regulations applicable to members of the defence services is also eligible for \"Entire amount\" deduction .\n- Gratuity received under the Payment of Gratuity Act, 1972 is deductible up to the amount calculated under section 4(2) and (3) of that Act .",
+  "citations": [
+   3
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614"
+  ],
+  "supporting_excerpt": "",
+  "reason": "entire-vs-limited conflict genuinely present"
+ },
+ {
+  "claim_id": "FZ-E1#c2",
+  "question_id": "FZ-E1",
+  "claim_text": "This suggests a category-based approach where some gratuities are fully exempt.\n\n**Position 2: Gratuity deduction is limited to a minimum of specified factors**  \nIn contrast,  provides a detailed formula for computing the deduction for \"any other gratuity\" received:\n- The deduction is the minimum of:\n  (a) actual gratuity received;\n  (b) amount specified by the Central Government via notification;\n  (c) half month\u2019s salary for each completed year of service, where:\n      - Average salary = average of ten months\u2019 salary preceding the event;\n      - Completed years of service = B .",
+  "citations": [
+   1
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ff25e5474d54db75fbf83437e257436896402b45ea648bc4cb65a4b2dfd4342d"
+  ],
+  "supporting_excerpt": "",
+  "reason": "category approach evident in S1"
+ },
+ {
+  "claim_id": "FZ-E1#c3",
+  "question_id": "FZ-E1",
+  "claim_text": "Additionally,  and  state that the aggregate deduction for gratuity(ies) received in a tax year (from one or more employers) shall not exceed:\n- A \u2013 B, where:\n  - A = limit specified by Central Government by notification;\n  - B = aggregate amount of gratuity(ies) received in earlier tax years that were already allowed as exemption or deduction , .",
+  "citations": [
+   2,
+   4
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "0ca142feb215082daad6d315f6d2500ec19a0c0f30d24f8ee4e7d2db93de5210",
+   "43fc2c328dfa466446f138381680430e84ed358908323312af64922a57af2754"
+  ],
+  "supporting_excerpt": "",
+  "reason": "aggregate-cap formula across cited blocks"
+ },
+ {
+  "claim_id": "FZ-E1#c4",
+  "question_id": "FZ-E1",
+  "claim_text": "This indicates a restrictive computation method with caps and adjustments for prior benefits.\n\n**Conflict Summary**  \nThe sources conflict on the exact treatment of gratuity deductions:\n-  states that certain gratuities (e.g., death-cum-retirement, defence services, and those under the Payment of Gratuity Act, 1972) are eligible for full or restricted full deductions.\n- , , and  describe a formula-based limitation using minimums and caps, including adjustments for prior gratuity receipts.",
+  "citations": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [
+   "ff25e5474d54db75fbf83437e257436896402b45ea648bc4cb65a4b2dfd4342d",
+   "0ca142feb215082daad6d315f6d2500ec19a0c0f30d24f8ee4e7d2db93de5210",
+   "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+   "43fc2c328dfa466446f138381680430e84ed358908323312af64922a57af2754"
+  ],
+  "supporting_excerpt": "",
+  "reason": "restrictive-method summary follows"
+ },
+ {
+  "claim_id": "FZ-E1#c5",
+  "question_id": "FZ-E1",
+  "claim_text": "Thus, the evidence disagrees on whether \"other gratuity\" is fully deductible or subject to a computed limit involving average salary, years of service, government notification, and prior receipt adjustments.",
+  "citations": [],
+  "expected_label": "SUPPORTED",
+  "supporting_source_ids": [],
+  "supporting_excerpt": "",
+  "reason": "faithful conflict summary"
+ }
+]

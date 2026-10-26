@@ -1,0 +1,916 @@
+{
+ "meta": {
+  "prohibited": [
+   "production",
+   "network",
+   "provider",
+   "retrieval"
+  ],
+  "created": "2026-10-04",
+  "annotator": "human-read vs frozen evidence",
+  "n": 43
+ },
+ "evidence_index": [
+  {
+   "key": "fz-A1",
+   "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75"
+  },
+  {
+   "key": "fz-STD",
+   "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614"
+  },
+  {
+   "key": "ca-ASSOC",
+   "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15"
+  },
+  {
+   "key": "ca-FIVE",
+   "chunk_id": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de"
+  },
+  {
+   "key": "s1-ALDH1",
+   "chunk_id": "ext-scifact-02"
+  },
+  {
+   "key": "s1-AMPK",
+   "chunk_id": "ext-scifact-11"
+  },
+  {
+   "key": "s1-APOE",
+   "chunk_id": "ext-scifact-03"
+  },
+  {
+   "key": "s1-AIRE",
+   "chunk_id": "ext-scifact-01"
+  },
+  {
+   "key": "s1-OA",
+   "chunk_id": "ext-scifact-07"
+  },
+  {
+   "key": "s1-VIS",
+   "chunk_id": "ext-scifact-09"
+  },
+  {
+   "key": "s1-CHEK",
+   "chunk_id": "ext-scifact-14"
+  }
+ ],
+ "cases": [
+  {
+   "id": "ADV-01",
+   "category": 1,
+   "claim_text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "verbatim title sentence of the cited abstract",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-02",
+   "category": 1,
+   "claim_text": "This Act may be called the Income-tax Act, 2025.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "verbatim statutory sentence",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-03",
+   "category": 2,
+   "claim_text": "Cancers and healthy breast tissue with high ALDH activity contain stem-like cells and face worse prognoses.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "reworded across sentence boundaries; morphology gap (carcinomas/cancer, activity/active) exercises variants()",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-04",
+   "category": 2,
+   "claim_text": "Aire gets turned on in cancerous skin cells when keratin 17 is present.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-AIRE",
+     "chunk_id": "ext-scifact-01",
+     "text": "Keratin-dependent regulation of Aire and gene expression in skin tumor keratinocytes. Expression of the intermediate filament protein keratin 17 (K17) is robustly upregulated in inflammatory skin diseases and in many tumors originating in stratified and pseudostratified epithelia. We report that autoimmune regulator (Aire), a transcriptional regulator, is inducibly expressed in human and mouse tumor keratinocytes in a K17-dependent manner and is required for timely onset of Gli2-induced skin tumorigenesis in mice. The induction of Aire mRNA in keratinocytes depends on a functional interaction between K17 and the heterogeneous nuclear ribonucleoprotein hnRNP K. Further, K17 colocalizes with Aire protein in the nucleus of tumor-prone keratinocytes, and each factor is bound to a specific promoter region featuring an NF-\u03baB consensus sequence in a relevant subset of K17- and Aire-dependent proinflammatory genes. These findings provide radically new insight into keratin intermediate filament and Aire function, along with a molecular basis for the K17-dependent amplification of inflammatory and immune responses in diseased epithelia."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "colloquial paraphrase; associated/association morphology",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-05",
+   "category": 2,
+   "claim_text": "The 2025 Income-tax Act covers the whole of the country.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "paraphrase of extent language",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-06",
+   "category": 3,
+   "claim_text": "An associate holds more than fifteen per cent of paid-up equity.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "spelled percent + exact figure",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-07",
+   "category": 3,
+   "claim_text": "The continuing interest is five percent of the corpus or ten crore rupees, whichever is lower.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-FIVE",
+     "chunk_id": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+     "text": "(d) the Manager or Sponsor shall have a continuing interest in the Alternative Investment\nFund of not less than two and half percent of the corpus or five crore rupees, whichever\nis lower, in the form of investment in the Alternative Investment Fund and such interest\nshall not be through the waiver of management fees:\nProvided that for Category III Alternative Investment Fund, the continuing interest shall\nbe not less than five percent of the corpus or ten crore rupees, whichever is lower.\n(e) the Manager or Sponsor shall disclose their investment in the Alternative Investment\nFund to the investors of the Alternative Investment Fund;\n(f) no scheme of the Alternative Investment Fund shall have more than one thousand\ninvestors64[:]\n65[Provided that accredited investors shall be excluded while computing the number of\ninvestor in a scheme of an Alternative Investment Fund:]\n66[Provided 67[further] that the provisions of the 68[Companies Act, 2013] shall apply to"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "figures as digits + words mixed",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-08",
+   "category": 4,
+   "claim_text": "The Act commences on 2026-04-01.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "ISO date must match 1st April, 2026 via date normalization",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-09",
+   "category": 4,
+   "claim_text": "The standard deduction is fifty thousand rupees or salary if lower, in other cases.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "number words + unit order variation",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-10",
+   "category": 4,
+   "claim_text": "Associate threshold: >15% of paid-up equity share capital.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "symbol + abbreviation density",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-11",
+   "category": 5,
+   "claim_text": "ALDH1 expression predicts better breast cancer outcomes.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "direct negation of cited finding",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-12",
+   "category": 5,
+   "claim_text": "AMPK activation increases lung fibrosis.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "s1-AMPK",
+     "chunk_id": "ext-scifact-11",
+     "text": "Metformin reverses established lung fibrosis in a bleomycin model. Fibrosis is a pathological result of a dysfunctional repair response to tissue injury and occurs in a number of organs, including the lungs1. Cellular metabolism regulates tissue repair and remodelling responses to injury2-4. AMPK is a critical sensor of cellular bioenergetics and controls the switch from anabolic to catabolic metabolism5. However, the role of AMPK in fibrosis is not well understood. Here, we demonstrate that in humans with idiopathic pulmonary fibrosis (IPF) and in an experimental mouse model of lung fibrosis, AMPK activity is lower in fibrotic regions associated with metabolically active and apoptosis-resistant myofibroblasts. Pharmacological activation of AMPK in myofibroblasts from lungs of humans with IPF display lower fibrotic activity, along with enhanced mitochondrial biogenesis and normalization of sensitivity to apoptosis. In a bleomycin model of lung fibrosis in mice, metformin therapeutically accelerates the resolution of well-established fibrosis in an AMPK-dependent manner. These studies implicate deficient AMPK activation in non-resolving, pathologic fibrotic processes, and support a role for metformin (or other AMPK activators) to reverse established fibrosis by facilitating deactivation and apoptosis of myofibroblasts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "direct negation; evidence shows reversal",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-13",
+   "category": 5,
+   "claim_text": "The short title is the Income-tax Act, 2024.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "wrong year against stated title",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-14",
+   "category": 6,
+   "claim_text": "An associate holds more than fifty percent of paid-up equity.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "same-slot percent alternative (fifteen vs fifty)",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-15",
+   "category": 6,
+   "claim_text": "The standard deduction in any other case is 75000.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "75000 belongs to the 202(1) case in the same chunk; claim misassigns it \u2014 same-slot amount alternative",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-16",
+   "category": 6,
+   "claim_text": "Continuing interest is two and a half percent or five crore.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "ca-FIVE",
+     "chunk_id": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+     "text": "(d) the Manager or Sponsor shall have a continuing interest in the Alternative Investment\nFund of not less than two and half percent of the corpus or five crore rupees, whichever\nis lower, in the form of investment in the Alternative Investment Fund and such interest\nshall not be through the waiver of management fees:\nProvided that for Category III Alternative Investment Fund, the continuing interest shall\nbe not less than five percent of the corpus or ten crore rupees, whichever is lower.\n(e) the Manager or Sponsor shall disclose their investment in the Alternative Investment\nFund to the investors of the Alternative Investment Fund;\n(f) no scheme of the Alternative Investment Fund shall have more than one thousand\ninvestors64[:]\n65[Provided that accredited investors shall be excluded while computing the number of\ninvestor in a scheme of an Alternative Investment Fund:]\n66[Provided 67[further] that the provisions of the 68[Companies Act, 2013] shall apply to"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "superseded figures present in-chunk as prior text; claim asserts them as current",
+   "ambiguity": "chunk contains both old and new figures; refutation rests on amendment framing in surrounding text",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-17",
+   "category": 7,
+   "claim_text": "The Act came into force on 1st April 2025.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "same-slot year alternative",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-18",
+   "category": 7,
+   "claim_text": "The Act commences 2025-04-01.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "ISO form of the wrong date; normalization must not rescue it",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-19",
+   "category": 8,
+   "claim_text": "APOE4 has no effect on tau phosphorylation.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "s1-APOE",
+     "chunk_id": "ext-scifact-03",
+     "text": "Gain of toxic Apolipoprotein E4 effects in Human iPSC-Derived Neurons Is Ameliorated by a Small-Molecule Structure Corrector. Efforts to develop drugs for Alzheimer's disease (AD) have shown promise in animal studies, only to fail in human trials, suggesting a pressing need to study AD in human model systems. Using human neurons derived from induced pluripotent stem cells that expressed apolipoprotein E4 (ApoE4), a variant of the APOE gene product and the major genetic risk factor for AD, we demonstrated that ApoE4-expressing neurons had higher levels of tau phosphorylation, unrelated to their increased production of amyloid-\u03b2 (A\u03b2) peptides, and that they displayed GABAergic neuron degeneration. ApoE4 increased A\u03b2 production in human, but not in mouse, neurons. Converting ApoE4 to ApoE3 by gene editing rescued these phenotypes, indicating the specific effects of ApoE4. Neurons that lacked APOE behaved similarly to those expressing ApoE3, and the introduction of ApoE4 expression recapitulated the pathological phenotypes, suggesting a gain of toxic effects from ApoE4. Treatment of ApoE4-expressing neurons with a small-molecule structure corrector ameliorated the detrimental effects, thus showing that correcting the pathogenic conformation of ApoE4 is a viable therapeutic approach for ApoE4-related AD."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "negation of stated increase",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-20",
+   "category": 8,
+   "claim_text": "Screening improves vision in older people.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "s1-VIS",
+     "chunk_id": "ext-scifact-09",
+     "text": "Effectiveness of screening older people for impaired vision in community setting: systematic review of evidence from randomised controlled trials.. OBJECTIVE To assess whether population screening for impaired vision among older people in the community leads to improvements in vision. DESIGN Systematic review of randomised controlled trials of population screening in the community that included any assessment of vision or visual function with at least 6 months' follow up. SUBJECTS Adults aged 65 or over. MAIN OUTCOME MEASURE Proportions with visual impairment in intervention and control groups with any method of assessing visual impairment. RESULTS There were no trials that primarily assessed visual screening. Outcome data on vision were available for 3494 people in five trials of multiphasic assessment. All the trials used self reported measures for vision impairment, both as screening tools and as outcome measures. The inclusion of a visual screening component in the assessment did not result in improvements in self reported visual problems (pooled odds ratio 1.04:95% confidence interval 0.89 to 1.22). A small reduction (11%) in the number of older people with self reported visual problems cannot be excluded. CONCLUSIONS Screening of asymptomatic older people in the community is not justified on present evidence. Visual impairment in this age group can usually be reduced with treatment. It is unclear why no benefit was seen. Further work is needed to clarify what interventions are appropriate for older people with unreported impairment of vision."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "negation of no-improvement finding",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-21",
+   "category": 9,
+   "claim_text": "Aspirin inhibits PGE2 production.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    },
+    {
+     "key": "s1-AMPK",
+     "chunk_id": "ext-scifact-11",
+     "text": "Metformin reverses established lung fibrosis in a bleomycin model. Fibrosis is a pathological result of a dysfunctional repair response to tissue injury and occurs in a number of organs, including the lungs1. Cellular metabolism regulates tissue repair and remodelling responses to injury2-4. AMPK is a critical sensor of cellular bioenergetics and controls the switch from anabolic to catabolic metabolism5. However, the role of AMPK in fibrosis is not well understood. Here, we demonstrate that in humans with idiopathic pulmonary fibrosis (IPF) and in an experimental mouse model of lung fibrosis, AMPK activity is lower in fibrotic regions associated with metabolically active and apoptosis-resistant myofibroblasts. Pharmacological activation of AMPK in myofibroblasts from lungs of humans with IPF display lower fibrotic activity, along with enhanced mitochondrial biogenesis and normalization of sensitivity to apoptosis. In a bleomycin model of lung fibrosis in mice, metformin therapeutically accelerates the resolution of well-established fibrosis in an AMPK-dependent manner. These studies implicate deficient AMPK activation in non-resolving, pathologic fibrotic processes, and support a role for metformin (or other AMPK activators) to reverse established fibrosis by facilitating deactivation and apoptosis of myofibroblasts."
+    }
+   ],
+   "citations": [],
+   "rationale": "real-world true, absent from supplied evidence (truth!=support)",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-22",
+   "category": 9,
+   "claim_text": "Paracetamol reduces fever.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-OA",
+     "chunk_id": "ext-scifact-07",
+     "text": "Open Access Increases Citation Rate. PLoS Biology publishes today a research article by Gunther Eysenbach that is not about biology. It is about citations. It provides robust evidence that open-access articles (OA articles) are more immediately recognized and cited than non-OA articles. As such, it adds objective support to the belief we have always held that open-access publication speeds up scientific dialog between researchers and, consequently, should be extended to the whole scientific literature as quickly as possible. It is therefore fitting that we publish such a paper. We have long argued that papers freely available in a journal will be more often read and cited than those behind a subscription barrier. However, solid evidence to support or refute such a claim has been surprisingly hard to find. Since most open-access journals are new, comparisons of the effects of open access with established subscription-based journals are easily confounded by age and reputation. In the current study, Eysenbach compared citations compiled by Thomson Scientific (formerly Thomson ISI) to individual articles published between June 2004 and December 2004 in the same journal\u2014namely, Proceedings of the National Academy of Sciences (PNAS), which announced its open-access option for authors on June 8 of that year, with an associated publication charge of US$1,000. Non-OA articles in PNAS are subject to a six-month \u201ctoll-access\u201d delay before the article becomes publicly available. The results of this natural experiment are clear: in the 4 to 16 months following publication, OA articles gained a significant citation advantage over non-OA articles during the same period. They are twice as likely to be cited 4 to 10 months after publication and almost three times as likely between 10 and 16 months. Given that PNAS delays open access for only six months, the disparity between OA and non-OA articles in journals where the delay is longer or where articles remain \u201ctoll-access\u201d is likely to be even greater. Eysenbach also looked at the impact of self-archiving non-OA articles. One route to open access, it is argued, is for authors to archive their published articles on their own Web sites or in institutional repositories, although this does not include an explicit business model to cover the cost of peer-review and publishing. The analysis revealed that self-archived articles are also cited less often than OA articles from the same journal. Yes, you're right; we do have a strong and vested interest in publishing results that so obviously endorse our existence. Moreover, the author of the article is also an editor of an open-access journal. But sometimes a potential conflict of interest can actually help to ensure rigor. In this case, we have an acute interest in ensuring that the article meets the same, if not higher, standards as any other research article we publish. Not only must the conclusions provide a significant advance for the field, but the study must be technically sound, with appropriate evidence to support those conclusions. As with all our research articles, we consulted throughout the evaluation process with an academic editor with appropriate expertise\u2014in this case, Carol Tenopir, professor of information sciences at the University of Tennessee (Knoxville, Tennessee, United States). The article was reviewed by two experts in bibliometric analyses and information science, and an experienced research biologist with expertise in statistics. They all enthusiastically supported publication, although one understandably questioned the suitability of PLoS Biology as the publication venue. We have no intention of making PLoS Biology a regular home for bibliometric studies (even when about open access). What makes this study worth publishing in PLoS Biology is not only the relative strength of evidence supporting the claim but also the extent to which many (especially other publishers) have anticipated such an analysis. As far as we are aware, no other study has compared OA and non-OA articles from the same journal and controlled for so many potentially confounding factors. Eysenbach's multivariate analysis took into account the number of days since publication, number of authors, article type, country of the corresponding author, funding type, subject area, submission track ( PNAS has three different ways that authors can submit a paper), and the previous citation record of the first and last authors. He even administered a supplementary questionnaire to assess whether authors choosing the OA option in PNAS chose to do so for only their most important research (they didn't). As Ian Rowlands from the Centre for Publishing at University College London\u2014and one of the reviewers who agreed to be identified in this article\u2014said at the start of his review:          \u201cMany (most) of the papers and presentations I have read/seen on this topic have completely failed to address the kinds of confounding issues that are so convincingly tackled here. For that reason alone, this paper deserves to be published and alerted to the widest possible audience. \u201d          In addition to providing evidence for the immediate advantage of open access, Eysenbach's analysis also highlights several potential challenges to its long-term future. Although a limited dataset, the citation history of the first and last authors differed between those who chose the open-access option and those who did not. In the group that chose open access, last authors tended to have a \u201cstronger\u201d previous citation record, whereas this situation was reversed among the group that declined the open-access option\u2014here, it was the first authors who tended to be stronger. This may reflect varying attitudes of authors at different stages of their career, a stronger influence from the leader of a particular group, or an age- or career-related difference in the ability to pay the publication charge (e.g., [ 1]). Indeed, access to appropriate funds may also be a reason why a lower proportion of authors from European countries tended to choose the open-access option. In many of these countries, funds for page charges\u2014and, by extension, open-access publication fees\u2014are often not included within research grants. PNAS was one of the first journals to offer an open-access option to its authors. However, such hybrid journals are increasing: Blackwell, Springer, and Oxford University Press now provide this option as well. This means that similar experiments can be replicated. Moreover, although the evidence from the current analysis argues most strongly for a time advantage in citation for OA articles, a study over longer periods will reveal whether this translates into a sustained increase in the number of citations. In the meantime, open-access advocates should be emboldened by tangible evidence for what has seemed obvious all along."
+    },
+    {
+     "key": "s1-VIS",
+     "chunk_id": "ext-scifact-09",
+     "text": "Effectiveness of screening older people for impaired vision in community setting: systematic review of evidence from randomised controlled trials.. OBJECTIVE To assess whether population screening for impaired vision among older people in the community leads to improvements in vision. DESIGN Systematic review of randomised controlled trials of population screening in the community that included any assessment of vision or visual function with at least 6 months' follow up. SUBJECTS Adults aged 65 or over. MAIN OUTCOME MEASURE Proportions with visual impairment in intervention and control groups with any method of assessing visual impairment. RESULTS There were no trials that primarily assessed visual screening. Outcome data on vision were available for 3494 people in five trials of multiphasic assessment. All the trials used self reported measures for vision impairment, both as screening tools and as outcome measures. The inclusion of a visual screening component in the assessment did not result in improvements in self reported visual problems (pooled odds ratio 1.04:95% confidence interval 0.89 to 1.22). A small reduction (11%) in the number of older people with self reported visual problems cannot be excluded. CONCLUSIONS Screening of asymptomatic older people in the community is not justified on present evidence. Visual impairment in this age group can usually be reduced with treatment. It is unclear why no benefit was seen. Further work is needed to clarify what interventions are appropriate for older people with unreported impairment of vision."
+    }
+   ],
+   "citations": [],
+   "rationale": "world-true, corpus-absent",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-23",
+   "category": 9,
+   "claim_text": "The sun rises in the east.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    },
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [],
+   "rationale": "trivially true, evidence-silent; the key truth-vs-support discriminator",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-24",
+   "category": 10,
+   "claim_text": "Metformin treats lung fibrosis in humans.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-AMPK",
+     "chunk_id": "ext-scifact-11",
+     "text": "Metformin reverses established lung fibrosis in a bleomycin model. Fibrosis is a pathological result of a dysfunctional repair response to tissue injury and occurs in a number of organs, including the lungs1. Cellular metabolism regulates tissue repair and remodelling responses to injury2-4. AMPK is a critical sensor of cellular bioenergetics and controls the switch from anabolic to catabolic metabolism5. However, the role of AMPK in fibrosis is not well understood. Here, we demonstrate that in humans with idiopathic pulmonary fibrosis (IPF) and in an experimental mouse model of lung fibrosis, AMPK activity is lower in fibrotic regions associated with metabolically active and apoptosis-resistant myofibroblasts. Pharmacological activation of AMPK in myofibroblasts from lungs of humans with IPF display lower fibrotic activity, along with enhanced mitochondrial biogenesis and normalization of sensitivity to apoptosis. In a bleomycin model of lung fibrosis in mice, metformin therapeutically accelerates the resolution of well-established fibrosis in an AMPK-dependent manner. These studies implicate deficient AMPK activation in non-resolving, pathologic fibrotic processes, and support a role for metformin (or other AMPK activators) to reverse established fibrosis by facilitating deactivation and apoptosis of myofibroblasts."
+    }
+   ],
+   "citations": [],
+   "rationale": "evidence shows mouse-model reversal + lower activity; human treatment unestablished \u2014 subject present, decisive element missing",
+   "ambiguity": "borderline SUPPORTED under generous reading; gold holds the strict line (human efficacy not in evidence)",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-25",
+   "category": 10,
+   "claim_text": "CHEK2 mutations cause breast cancer.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-CHEK",
+     "chunk_id": "ext-scifact-14",
+     "text": "Linkage Disequilibrium Mapping of       CHEK2: Common Variation and Breast Cancer Risk     . Background Checkpoint kinase 2 (CHEK2) averts cancer development by promoting cell cycle arrest and activating DNA repair in genetically damaged cells. Previous investigation has established a role for the CHEK2 gene in breast cancer aetiology, but studies have largely been limited to the rare 1100delC mutation. Whether common polymorphisms in this gene influence breast cancer risk remains unknown. In this study, we aimed to assess the importance of common CHEK2 variants on population risk for breast cancer by capturing the majority of diversity in the gene using haplotype tagging single nucleotide polymorphisms (tagSNPs). Methods and Findings We analyzed 14 common SNPs spanning 52 kilobases (kb) of the CHEK2 gene in 92 Swedish women. Coverage evaluation indicated that these typed SNPs would efficiently convey association signal also from untyped SNPs in the same region. Six of the 14 SNPs predicted well both the haplotypic and single SNP variations within CHEK2. We genotyped these six tagSNPs in 1,577 postmenopausal breast cancer cases and 1,513 population controls, but found no convincing association between any common CHEK2 haplotype and breast cancer risk. The 1100delC mutation was rare in our Swedish population\u20140.7% in cases and 0.4% in controls\u2014 with a corresponding odds ratio for carriers versus noncarriers of 2.26 (95% confidence interval, 0.99\u20135.15). Estimates of the population frequency and the odds ratio of 1100delC indicate that our sample is representative of a Northern European population."
+    }
+   ],
+   "citations": [],
+   "rationale": "evidence discusses risk association, not causation; decisive element missing",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-26",
+   "category": 11,
+   "claim_text": "ALDH1 predicts poor prognosis and was studied in 1000 carcinomas.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "conjunction, second limb contradicted (577 in evidence)",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-27",
+   "category": 11,
+   "claim_text": "ALDH1 predicts poor prognosis and was found in lung tissue.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "conjunction, second limb unverifiable in evidence",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-28",
+   "category": 11,
+   "claim_text": "The Act is titled 2025 and commenced in 2026.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "conjunction, both limbs evidenced \u2014 control for 26/27",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-29",
+   "category": 12,
+   "claim_text": "ALDH1 predicts poor prognosis and AMPK activity is lower in fibrotic lungs.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    },
+    {
+     "key": "s1-AMPK",
+     "chunk_id": "ext-scifact-11",
+     "text": "Metformin reverses established lung fibrosis in a bleomycin model. Fibrosis is a pathological result of a dysfunctional repair response to tissue injury and occurs in a number of organs, including the lungs1. Cellular metabolism regulates tissue repair and remodelling responses to injury2-4. AMPK is a critical sensor of cellular bioenergetics and controls the switch from anabolic to catabolic metabolism5. However, the role of AMPK in fibrosis is not well understood. Here, we demonstrate that in humans with idiopathic pulmonary fibrosis (IPF) and in an experimental mouse model of lung fibrosis, AMPK activity is lower in fibrotic regions associated with metabolically active and apoptosis-resistant myofibroblasts. Pharmacological activation of AMPK in myofibroblasts from lungs of humans with IPF display lower fibrotic activity, along with enhanced mitochondrial biogenesis and normalization of sensitivity to apoptosis. In a bleomycin model of lung fibrosis in mice, metformin therapeutically accelerates the resolution of well-established fibrosis in an AMPK-dependent manner. These studies implicate deficient AMPK activation in non-resolving, pathologic fibrotic processes, and support a role for metformin (or other AMPK activators) to reverse established fibrosis by facilitating deactivation and apoptosis of myofibroblasts."
+    }
+   ],
+   "citations": [
+    1,
+    2
+   ],
+   "rationale": "needs S1+S2; exercises multi-marker attribution + multi-source recall",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-30",
+   "category": 12,
+   "claim_text": "The short title is the 2025 Act and the associate threshold is fifteen percent.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    },
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1,
+    2
+   ],
+   "rationale": "cross-corpus conjunction (tax + SEBI in one claim)",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-31",
+   "category": 13,
+   "claim_text": "The standard deduction in any other case is 75000 [S1][S2], where S1 states 50000-or-salary and S2 states 75000 for 202(1).",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    },
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [
+    1,
+    2
+   ],
+   "rationale": "S1 contradicts the claim as stated (scope misassignment); S2's figure belongs to another case. Conflict present -> REFUTED by rule",
+   "ambiguity": "requires judging the claim as stated, not its parts",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-32",
+   "category": 13,
+   "claim_text": "Associate needs fifteen percent [S1] and angel funds need half percent [S2].",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    },
+    {
+     "key": "ca-FIVE",
+     "chunk_id": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+     "text": "(d) the Manager or Sponsor shall have a continuing interest in the Alternative Investment\nFund of not less than two and half percent of the corpus or five crore rupees, whichever\nis lower, in the form of investment in the Alternative Investment Fund and such interest\nshall not be through the waiver of management fees:\nProvided that for Category III Alternative Investment Fund, the continuing interest shall\nbe not less than five percent of the corpus or ten crore rupees, whichever is lower.\n(e) the Manager or Sponsor shall disclose their investment in the Alternative Investment\nFund to the investors of the Alternative Investment Fund;\n(f) no scheme of the Alternative Investment Fund shall have more than one thousand\ninvestors64[:]\n65[Provided that accredited investors shall be excluded while computing the number of\ninvestor in a scheme of an Alternative Investment Fund:]\n66[Provided 67[further] that the provisions of the 68[Companies Act, 2013] shall apply to"
+    }
+   ],
+   "citations": [
+    1,
+    2
+   ],
+   "rationale": "both limbs evidenced in respective sources \u2014 control for 31",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-33",
+   "category": 14,
+   "claim_text": "The association threshold is fifteen percent.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "associate/association morphology must merge, not split",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-34",
+   "category": 14,
+   "claim_text": "The associate threshold is fifty thousand rupees.",
+   "expected_label": "REFUTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    },
+    {
+     "key": "ca-FIVE",
+     "chunk_id": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+     "text": "(d) the Manager or Sponsor shall have a continuing interest in the Alternative Investment\nFund of not less than two and half percent of the corpus or five crore rupees, whichever\nis lower, in the form of investment in the Alternative Investment Fund and such interest\nshall not be through the waiver of management fees:\nProvided that for Category III Alternative Investment Fund, the continuing interest shall\nbe not less than five percent of the corpus or ten crore rupees, whichever is lower.\n(e) the Manager or Sponsor shall disclose their investment in the Alternative Investment\nFund to the investors of the Alternative Investment Fund;\n(f) no scheme of the Alternative Investment Fund shall have more than one thousand\ninvestors64[:]\n65[Provided that accredited investors shall be excluded while computing the number of\ninvestor in a scheme of an Alternative Investment Fund:]\n66[Provided 67[further] that the provisions of the 68[Companies Act, 2013] shall apply to"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "conflates angel-fund 50K with associate 15%; S1 contradicts as stated",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-35",
+   "category": 14,
+   "claim_text": "AIF associate rules apply to alternative funds.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "ca-ASSOC",
+     "chunk_id": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+     "text": "(c) \u201cassociate\u201d means a company or a limited liability partnership or a body corporate\nin which a director or trustee or partner or Sponsor or Manager of the Alternative\nInvestment Fund or a director or partner of the Manager or Sponsor holds, either\nindividually or collectively, more than fifteen percent of its paid-up equity share\ncapital or partnership interest, as the case may be;\n3 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201cCompanies Act, 1956\u201d.\n4 Substituted by the Securities and Exchange Board of India (Alternative Investment Funds) (Amendment)\nRegulations, 2018, w.e.f. 01-06-2018. Prior to the substitution, it read as \u201c(ii) ESOP Trusts set up under the\nSecurities and Exchange Board of India (Employee Stock Option Scheme and Employee Stock Purchase Scheme),\nGuidelines, 1999 or as permitted under Companies Act, 1956;\u201d"
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "AIF acronym + alternate/alternative variation",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-36",
+   "category": 15,
+   "claim_text": "Income earned in India is taxable in India.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    },
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [],
+   "rationale": "plausible tax truism, not stated in supplied chunks",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-37",
+   "category": 15,
+   "claim_text": "The Finance Act is passed every year.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-A1",
+     "chunk_id": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+     "text": "INCOME-TAX ACT, 2025\n[30 OF 2025]*\n[AS AMENDED BY FINANCE ACT, 2026]\nAn Act to consolidate and amend\nthe law relating to income-tax\nBE it enacted by Parliament in the Seventy-sixth Year of the Republic\nof India as follows:\u2014\nCHAPTER I\nPRELIMINARY\nShort title, extent and commencement.\n1. (1) This Act may be called the Income-tax Act, 2025.\n(2) It extends to the whole of India.\n(3) Save as otherwise provided in this Act, it shall come into force on the 1st April,\n2026.\nDefinitions.\n2. In this Act, unless the context otherwise requires,\u2014\n(1) \u201caccountant\u201d shall have the meaning assigned to it in section 515(3)(b);\n(2) \u201cAdditional Commissioner\u201d means a person appointed to be an Additional\nCommissioner of Income-tax under section 237(1);\n(3) \u201cAdditional Director\u201d means a person appointed to be an Additional\nDirector of Income-tax under section 237(1);\n(4) \u201cadvance tax\u201d means the advance tax payable as per Chapter XIX-C;\n(5) \u201cagricultural income\u201d means\u2014"
+    },
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [],
+   "rationale": "world-true procedural fact, evidence-silent",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-38",
+   "category": 16,
+   "claim_text": "ALDH1 predicts poor clinical outcome [S5].",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    5
+   ],
+   "rationale": "content supported by S1; citation points at S5 (wrong number) \u2014 claim SUPPORTED, citation incorrect by construction",
+   "ambiguity": "tests citation-correctness layer, not content support",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-39",
+   "category": 16,
+   "claim_text": "AMPK is lower in fibrotic regions [S1] through [S3].",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-AMPK",
+     "chunk_id": "ext-scifact-11",
+     "text": "Metformin reverses established lung fibrosis in a bleomycin model. Fibrosis is a pathological result of a dysfunctional repair response to tissue injury and occurs in a number of organs, including the lungs1. Cellular metabolism regulates tissue repair and remodelling responses to injury2-4. AMPK is a critical sensor of cellular bioenergetics and controls the switch from anabolic to catabolic metabolism5. However, the role of AMPK in fibrosis is not well understood. Here, we demonstrate that in humans with idiopathic pulmonary fibrosis (IPF) and in an experimental mouse model of lung fibrosis, AMPK activity is lower in fibrotic regions associated with metabolically active and apoptosis-resistant myofibroblasts. Pharmacological activation of AMPK in myofibroblasts from lungs of humans with IPF display lower fibrotic activity, along with enhanced mitochondrial biogenesis and normalization of sensitivity to apoptosis. In a bleomycin model of lung fibrosis in mice, metformin therapeutically accelerates the resolution of well-established fibrosis in an AMPK-dependent manner. These studies implicate deficient AMPK activation in non-resolving, pathologic fibrotic processes, and support a role for metformin (or other AMPK activators) to reverse established fibrosis by facilitating deactivation and apoptosis of myofibroblasts."
+    }
+   ],
+   "citations": [
+    1,
+    2,
+    3
+   ],
+   "rationale": "range citation where only S1 supports; range parsing + partial attribution under test",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-40",
+   "category": 17,
+   "claim_text": "The provision took effect on 1-4-2026.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [],
+   "rationale": "date true in world/elsewhere, absent from supplied chunk \u2014 must not be rescued",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-41",
+   "category": 17,
+   "claim_text": "The deduction limit was raised in 2024.",
+   "expected_label": "UNSUPPORTED",
+   "evidence": [
+    {
+     "key": "fz-STD",
+     "chunk_id": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+     "text": "Entire amount.\n2. Standard deduction. (a) ` 75000 or the salary, whichever is\nless, where income-tax is computed\nunder section 202(1);\n(b) ` 50000 or the salary, whichever is\nless, in any other case.\n3. Death-cum-retirement gratuity\nreceived as referred to in sub-\nsection (2)(g).\nEntire amount.\n4. Payment of retiring gratuity\nreceived under the Pension Code\nor Regulations applicable to the\nmembers of the defence services.\nEntire amount.\n5. Gratuity received under the\nPayment of Gratuity Act, 1972\n(39 of 1972).\nAmount received, as restricted to the\namount calculated as per the provisions\nof section 4(2) and (3) of the said Act."
+    }
+   ],
+   "citations": [],
+   "rationale": "plausible dated claim, evidence-silent",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-42",
+   "category": 18,
+   "claim_text": "ALDH1's prognostic role is not fully settled, though expression correlated with poor prognosis in the studied series.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-ALDH1",
+     "chunk_id": "ext-scifact-02",
+     "text": "ALDH1 is a marker of normal and malignant human mammary stem cells and a predictor of poor clinical outcome.. Application of stem cell biology to breast cancer research has been limited by the lack of simple methods for identification and isolation of normal and malignant stem cells. Utilizing in vitro and in vivo experimental systems, we show that normal and cancer human mammary epithelial cells with increased aldehyde dehydrogenase activity (ALDH) have stem/progenitor properties. These cells contain the subpopulation of normal breast epithelium with the broadest lineage differentiation potential and greatest growth capacity in a xenotransplant model. In breast carcinomas, high ALDH activity identifies the tumorigenic cell fraction, capable of self-renewal and of generating tumors that recapitulate the heterogeneity of the parental tumor. In a series of 577 breast carcinomas, expression of ALDH1 detected by immunostaining correlated with poor prognosis. These findings offer an important new tool for the study of normal and malignant breast stem cells and facilitate the clinical application of stem cell concepts."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "nuanced/conflict-reporting shape must not read as refutation",
+   "ambiguity": "",
+   "automation_suitable": true
+  },
+  {
+   "id": "ADV-43",
+   "category": 18,
+   "claim_text": "It is not established that screening helps, though one analysis found no improvement.",
+   "expected_label": "SUPPORTED",
+   "evidence": [
+    {
+     "key": "s1-VIS",
+     "chunk_id": "ext-scifact-09",
+     "text": "Effectiveness of screening older people for impaired vision in community setting: systematic review of evidence from randomised controlled trials.. OBJECTIVE To assess whether population screening for impaired vision among older people in the community leads to improvements in vision. DESIGN Systematic review of randomised controlled trials of population screening in the community that included any assessment of vision or visual function with at least 6 months' follow up. SUBJECTS Adults aged 65 or over. MAIN OUTCOME MEASURE Proportions with visual impairment in intervention and control groups with any method of assessing visual impairment. RESULTS There were no trials that primarily assessed visual screening. Outcome data on vision were available for 3494 people in five trials of multiphasic assessment. All the trials used self reported measures for vision impairment, both as screening tools and as outcome measures. The inclusion of a visual screening component in the assessment did not result in improvements in self reported visual problems (pooled odds ratio 1.04:95% confidence interval 0.89 to 1.22). A small reduction (11%) in the number of older people with self reported visual problems cannot be excluded. CONCLUSIONS Screening of asymptomatic older people in the community is not justified on present evidence. Visual impairment in this age group can usually be reduced with treatment. It is unclear why no benefit was seen. Further work is needed to clarify what interventions are appropriate for older people with unreported impairment of vision."
+    }
+   ],
+   "citations": [
+    1
+   ],
+   "rationale": "hedged abstention-adjacent shape; content faithful to evidence",
+   "ambiguity": "",
+   "automation_suitable": true
+  }
+ ]
+}

@@ -1,0 +1,346 @@
+[
+ {
+  "claim_id": "ADV-01",
+  "question_id": "ADV-01",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-02",
+  "question_id": "ADV-02",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-03",
+  "question_id": "ADV-03",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.6,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-04",
+  "question_id": "ADV-04",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-01",
+  "recall": 0.4444,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-05",
+  "question_id": "ADV-05",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.7143,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-06",
+  "question_id": "ADV-06",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-07",
+  "question_id": "ADV-07",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-08",
+  "question_id": "ADV-08",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.75,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-09",
+  "question_id": "ADV-09",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+  "recall": 0.7143,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-10",
+  "question_id": "ADV-10",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.875,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-11",
+  "question_id": "ADV-11",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.7143,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-12",
+  "question_id": "ADV-12",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-11",
+  "recall": 0.8333,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-13",
+  "question_id": "ADV-13",
+  "predicted_label": "REFUTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.8333,
+  "detail": "numeric-mismatch-anchored"
+ },
+ {
+  "claim_id": "ADV-14",
+  "question_id": "ADV-14",
+  "predicted_label": "REFUTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.8333,
+  "detail": "numeric-mismatch-anchored"
+ },
+ {
+  "claim_id": "ADV-15",
+  "question_id": "ADV-15",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-16",
+  "question_id": "ADV-16",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1e06e0134ae3a734ea2a2da6f8f67e97fc850ec3a6ce350931bbe28f427c05de",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-17",
+  "question_id": "ADV-17",
+  "predicted_label": "REFUTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.6,
+  "detail": "numeric-mismatch-anchored"
+ },
+ {
+  "claim_id": "ADV-18",
+  "question_id": "ADV-18",
+  "predicted_label": "REFUTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.5,
+  "detail": "numeric-mismatch-anchored"
+ },
+ {
+  "claim_id": "ADV-19",
+  "question_id": "ADV-19",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-03",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-20",
+  "question_id": "ADV-20",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-09",
+  "recall": 0.8,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-21",
+  "question_id": "ADV-21",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.0,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-22",
+  "question_id": "ADV-22",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-09",
+  "recall": 0.3333,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-23",
+  "question_id": "ADV-23",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.0,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-24",
+  "question_id": "ADV-24",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-11",
+  "recall": 0.8,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-25",
+  "question_id": "ADV-25",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-14",
+  "recall": 0.8,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-26",
+  "question_id": "ADV-26",
+  "predicted_label": "REFUTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.5714,
+  "detail": "numeric-mismatch-anchored"
+ },
+ {
+  "claim_id": "ADV-27",
+  "question_id": "ADV-27",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.4286,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-28",
+  "question_id": "ADV-28",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.8333,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-29",
+  "question_id": "ADV-29",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-11",
+  "recall": 0.9,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-30",
+  "question_id": "ADV-30",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.875,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-31",
+  "question_id": "ADV-31",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-32",
+  "question_id": "ADV-32",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.6667,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-33",
+  "question_id": "ADV-33",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.75,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-34",
+  "question_id": "ADV-34",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.5,
+  "detail": "number-absent"
+ },
+ {
+  "claim_id": "ADV-35",
+  "question_id": "ADV-35",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "32592af27a274c07ea896ccb5abb3b1dc0789198763924331a943872ef3e5a15",
+  "recall": 0.5714,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-36",
+  "question_id": "ADV-36",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.6,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-37",
+  "question_id": "ADV-37",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "1cc75368eee0d457c2e602d4a0c66e07a1aeb656bedd67e29afd25861d674c75",
+  "recall": 0.5,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-38",
+  "question_id": "ADV-38",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.8,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-39",
+  "question_id": "ADV-39",
+  "predicted_label": "SUPPORTED",
+  "best_chunk": "ext-scifact-11",
+  "recall": 1.0,
+  "detail": "term-recall-union"
+ },
+ {
+  "claim_id": "ADV-40",
+  "question_id": "ADV-40",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+  "recall": 0.25,
+  "detail": "number-absent"
+ },
+ {
+  "claim_id": "ADV-41",
+  "question_id": "ADV-41",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "231f38fb22f10d1bd155d3d7fa12404a78f3076d506a9e8c3779561ab33bd614",
+  "recall": 0.25,
+  "detail": "number-absent"
+ },
+ {
+  "claim_id": "ADV-42",
+  "question_id": "ADV-42",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-02",
+  "recall": 0.5455,
+  "detail": "low-recall"
+ },
+ {
+  "claim_id": "ADV-43",
+  "question_id": "ADV-43",
+  "predicted_label": "UNSUPPORTED",
+  "best_chunk": "ext-scifact-09",
+  "recall": 0.2857,
+  "detail": "low-recall"
+ }
+]

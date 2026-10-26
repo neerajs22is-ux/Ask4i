@@ -1,0 +1,51 @@
+{
+ "n": 106,
+ "accuracy": 0.5377,
+ "per_class": {
+  "SUPPORTED": {
+   "n_gold": 95,
+   "precision": 0.9811,
+   "recall": 0.5474,
+   "f1": 0.7027
+  },
+  "REFUTED": {
+   "n_gold": 0,
+   "note": "no gold instances; P/R/F1 not computable"
+  },
+  "UNSUPPORTED": {
+   "n_gold": 1,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  "NOT_CHECKABLE": {
+   "n_gold": 10,
+   "precision": 0.8333,
+   "recall": 0.5,
+   "f1": 0.625
+  }
+ },
+ "macro_f1_computable_classes": 0.4426,
+ "confusion_true_rows": {
+  "SUPPORTED": {
+   "SUPPORTED": 52,
+   "UNSUPPORTED": 36,
+   "REFUTED": 6,
+   "NOT_CHECKABLE": 1
+  },
+  "REFUTED": {},
+  "UNSUPPORTED": {
+   "SUPPORTED": 1
+  },
+  "NOT_CHECKABLE": {
+   "NOT_CHECKABLE": 5,
+   "UNSUPPORTED": 5
+  }
+ },
+ "formulas": {
+  "accuracy": "correct / 106",
+  "precision_class": "tp / (tp + fp)",
+  "recall_class": "tp / (tp + fn)",
+  "macro_f1": "mean F1 over classes WITH gold instances (REFUTED excluded: n=0)"
+ }
+}

@@ -1,0 +1,92 @@
+[
+ {
+  "expected": "SUPPORTED",
+  "id": "S2-SUP-A1",
+  "pop": "jina-34case-01",
+  "q": "What is the short title of the Income-tax Act, 2025?"
+ },
+ {
+  "expected": "SUPPORTED",
+  "id": "S2-SUP-A2",
+  "pop": "jina-34case-01",
+  "q": "To what geographical extent does the Income-tax Act, 2025 apply?"
+ },
+ {
+  "expected": "SUPPORTED",
+  "id": "S2-SUP-CA01",
+  "pop": "jina-ca-32case-01",
+  "q": "Under the SEBI AIF Regulations, what does 'associate' mean?"
+ },
+ {
+  "expected": "SUPPORTED",
+  "id": "S2-SUP-CA08",
+  "pop": "jina-ca-32case-01",
+  "q": "What fit-and-proper and key-team conditions apply for AIF registration?"
+ },
+ {
+  "expected": "SUPPORTED",
+  "id": "S2-SUP-G1",
+  "pop": "jina-34case-01",
+  "q": "How is co-operative society defined after the Finance Act, 2026 amendment?"
+ },
+ {
+  "expected": "CONFLICTING",
+  "id": "S2-CON-A1Y",
+  "pop": "jina-34case-01",
+  "q": "The short title of the Income-tax Act, 2025 is the Income-tax Act, 2024. Is this correct?"
+ },
+ {
+  "expected": "CONFLICTING",
+  "id": "S2-CON-A2M",
+  "pop": "jina-34case-01",
+  "q": "The Income-tax Act, 2025 applies only to the state of Maharashtra. Is this correct?"
+ },
+ {
+  "expected": "CONFLICTING",
+  "id": "S2-CON-CA01",
+  "pop": "jina-ca-32case-01",
+  "q": "Under the SEBI AIF Regulations, an associate means holding more than fifty percent of paid-up equity share capital. Is this correct?"
+ },
+ {
+  "expected": "CONFLICTING",
+  "id": "S2-CON-CA12",
+  "pop": "jina-ca-32case-01",
+  "q": "For Category III funds the Manager or Sponsor must maintain interest of not less than fifty percent of the corpus. Is this correct?"
+ },
+ {
+  "expected": "CONFLICTING",
+  "id": "S2-CON-A1F",
+  "pop": "jina-34case-01",
+  "q": "The Income-tax Act, 2025 came into force on 1st April 2025. Is this correct?"
+ },
+ {
+  "expected": "NOINFO",
+  "id": "S2-NOI-F1",
+  "pop": "jina-34case-01",
+  "q": "What is the GST rate applicable to interior design services?"
+ },
+ {
+  "expected": "NOINFO",
+  "id": "S2-NOI-F2",
+  "pop": "jina-34case-01",
+  "q": "Is a person liable to wealth-tax on urban land under this Act?"
+ },
+ {
+  "expected": "NOINFO",
+  "id": "S2-NOI-F3",
+  "pop": "jina-34case-01",
+  "q": "Which ITR form should a salaried individual file?"
+ },
+ {
+  "expected": "NOINFO",
+  "id": "S2-NOI-F4",
+  "pop": "jina-34case-01",
+  "q": "What rebate amount is available under section 87A?"
+ },
+ {
+  "expected": "NOINFO",
+  "id": "S2-NOI-CAX",
+  "pop": "jina-ca-32case-01",
+  "q": "Does SEBI require AIFs to disclose cryptocurrency ETF holdings?"
+ }
+]

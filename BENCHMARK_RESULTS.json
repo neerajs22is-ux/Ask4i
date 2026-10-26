@@ -1,0 +1,238 @@
+{
+ "identity": {
+  "git_head": "430ad39",
+  "git_status": "clean-0-modified",
+  "prod_functions": {
+   "ask": 52,
+   "query_chunks": 37,
+   "ingest_pdf": 38,
+   "edit_message": 1,
+   "embed_worker": 37,
+   "storage_cleanup": 6,
+   "benchmark_retrieval": 5,
+   "benchmark_answer": 3,
+   "benchmark_ingest": 2
+  },
+  "models": {
+   "embed": "jina-embeddings-v5-text-small-1024",
+   "rerank": "jina-reranker-v3.5",
+   "answer": "mantle-qwen3-235b-temp0.0-maxtokens1024-prompts-v2",
+   "checker": "OFF"
+  },
+  "retrieval": "dense20-lex20-cap50-RRF60-finalK8-no-threshold",
+  "kill_switch": "present-OFF",
+  "timestamp": "2026-10-04-external-alignment",
+  "spend_this_package": "zero-new-no-live-calls"
+ },
+ "retrieval_answerable_n30": {
+  "current_prod_34_JinaB_equiv": {
+   "hit_at_1": 0.833,
+   "recall_at_3": 0.553,
+   "recall_at_5": 0.575,
+   "recall_at_8": 0.606,
+   "ndcg_at_8": 0.65,
+   "mrr_recomputed": 0.894,
+   "precision_at_8": 0.213
+  },
+  "prior_34_JinaB_0918": {
+   "hit_at_1": 0.9,
+   "recall_at_3": 0.581,
+   "recall_at_5": 0.631,
+   "recall_at_8": 0.658,
+   "ndcg_at_8": 0.697,
+   "mrr_recomputed": 0.944
+  },
+  "prior_34_JinaA_0918": {
+   "hit_at_1": 0.767,
+   "recall_at_3": 0.483,
+   "recall_at_5": 0.586,
+   "recall_at_8": 0.603,
+   "ndcg_at_8": 0.625,
+   "mrr_recomputed": 0.853
+  },
+  "prior_CA32_JinaB": {
+   "hit_at_1": 0.933,
+   "recall_at_3": 0.967,
+   "recall_at_5": 0.967,
+   "recall_at_8": 0.967,
+   "ndcg_at_8": 0.954,
+   "mrr_recomputed": 0.95
+  },
+  "prior_CA32_JinaA": {
+   "hit_at_1": 0.867,
+   "recall_at_3": 0.9,
+   "recall_at_5": 0.9,
+   "recall_at_8": 0.9,
+   "ndcg_at_8": 0.885,
+   "mrr_recomputed": 0.883
+  }
+ },
+ "retrieval_notes": [
+  "answerable-only n=30 per set; refusal cases excluded by design (empty expected sets)",
+  "Recall@10 = Recall@8 (evidence capped at 8; not invented)",
+  "artifact-summary MRR differs: 34-case denominator + refusal scoring convention",
+  "current-vs-prior delta confounds corpus growth 563->899 chunks + prompts v1->v2; retrieval code locked"
+ ],
+ "answer_current_prod_34": {
+  "http_200": "34/34",
+  "citations_ok": "28/34=0.824",
+  "citation_guard_hard_fails": 0,
+  "fabricated_sources_observed": 0,
+  "tripwire": {
+   "grounded": 10,
+   "missing_qualifier": 13,
+   "numeric_mismatch": 5,
+   "unsupported_claims": 3,
+   "clarify_or_null": 3
+  },
+  "gate": {
+   "SUPPORTED": 9,
+   "PARTIAL": 18,
+   "CONFLICTING": 4,
+   "clarify_or_null": 3
+  },
+  "refusal_F1_F4": "4/4 honest non-answers, zero fabricated claims",
+  "citations_ok_false_breakdown": "B1/B4/D1 clarification-routed 0-cites by design; E3 honest non-answer 0-cites; F2/F3 honest non-answers with 2/4 cites (metric edge, not fabrication)"
+ },
+ "answer_blocked_claim_level": [
+  "hallucination-rate",
+  "unsupported-claim-rate",
+  "contradiction-rate",
+  "grounded-claim-rate",
+  "citation-entailment",
+  "citation-completeness (no atomic-claim harness exists)"
+ ],
+ "security_local": {
+  "deno_shared_tests": "315/315",
+  "secret_value_hits": 0,
+  "v2_untrusted_data_prompts": "present-3-modes-plus-test-pin",
+  "manager_only_all_3_benchmark_fns": "present",
+  "request_size_all_8_entries": "present",
+  "cost_control_wiring": "present",
+  "live_attack_tests": "BLOCKED-needs-2nd-tenant-or-identity"
+ },
+ "cost_abuse": {
+  "new_tests": "315/315 green (18 cost-control)",
+  "live_re_probes_this_package": 0,
+  "standing_live_evidence": "kill 503/zero-records, user-minute 429s, slots busy-503 with 0 stuck, stale reap, member-write 403s, manager-allow 200, accounting exact (all 2026-10-04 gate)"
+ },
+ "production_data_touched": false,
+ "committed_pushed_deployed": false,
+ "new_tests_executed": "315 shared (local, no prod impact)",
+ "external_alignment": {
+  "s1_scifact_adapted_30": {
+   "retrieval_gold_scoped_20": {
+    "hit_at_1": 0.95,
+    "recall_at_8": 0.95,
+    "mrr": 0.95,
+    "ndcg_at_8": 0.95,
+    "miss": [
+     "S1-CON-T6 (gold doc itself does not entail the claim)"
+    ]
+   },
+   "verdicts_strict": {
+    "SUPPORTED": "3/10",
+    "CONFLICTING": "0/10",
+    "INSUFFICIENT": "0/10"
+   },
+   "verdicts_behavioral_disclosed_human_read": {
+    "support_correct": "10/10",
+    "contradiction_refuted": "9/10",
+    "contradiction_honest_abstain": "1/10 (T6)",
+    "noinfo_honest_abstain": "10/10"
+   },
+   "affirmed_falsehoods": 0,
+   "fabricated_sources": 0,
+   "status": "ADAPTED / INTERNAL (not an official SciFact result)"
+  },
+  "s2_claimverify_internal_15": {
+   "retrieval_gold_scoped_10": {
+    "hit_at_1": "10/10"
+   },
+   "verdicts_strict": {
+    "SUPPORTED": "2/5",
+    "CONFLICTING": "1/5",
+    "INSUFFICIENT": "0/5"
+   },
+   "verdicts_behavioral": {
+    "support_correct": "5/5",
+    "contradiction_safe": "5/5 (4 corrected + 1 honest conflict)",
+    "noinfo_abstain": "5/5"
+   },
+   "affirmed_falsehoods": 0,
+   "fabricated_sources": 0,
+   "status": "ADAPTED / INTERNAL"
+  },
+  "cost_actual": {
+   "ingest_requests": 2,
+   "ingest_tokens_measured": 8006,
+   "retrieval_calls": 45,
+   "answer_calls": 45,
+   "provider_calls_total_exact": 137,
+   "tokens_total_estimated": "~370K (rerank ~4.6Kx45 + embed ~0.5Kx45 + gen ~3Kx45, prior measured means)",
+   "cleanup": "doc+chunks+benchmark rows deleted; counts restored docs 11/chunks 899/bemb 500; ext rows 0"
+  }
+ },
+ "claim_level": {
+  "n_claims": 106,
+  "n_answers": 30,
+  "supported": 95,
+  "refuted": 0,
+  "unsupported": 1,
+  "not_checkable": 10,
+  "support_rate": 0.896,
+  "contradiction_rate": 0.0,
+  "unsupported_rate": 0.009,
+  "checkable_coverage": 0.906,
+  "evidence_supported_answer_rate": 0.967,
+  "cited_claims": 51,
+  "citation_supported": 49,
+  "citation_supported_rate": 0.961,
+  "unsupported_cited_rate": 0.0,
+  "evaluator": {
+   "accuracy": 0.538,
+   "macro_f1_computable": 0.443,
+   "supported_f1": 0.703,
+   "refuted_note": "n=0, not computable"
+  },
+  "status": "ADAPTED / INTERNAL (deterministic scorer + human gold; not production traffic)",
+  "evaluator_v2": {
+   "accuracy_frozen": 0.6604,
+   "macro_f1_frozen": 0.5218,
+   "supported_f1": 0.7875,
+   "regressions_36": true,
+   "thresholds": "0.6/0.7 intact"
+  },
+  "adversarial_43": {
+   "accuracy": 0.6512,
+   "macro_f1": 0.6296,
+   "supported_f1": 0.6957,
+   "refuted_precision": 1.0,
+   "refuted_recall": 0.3846,
+   "refuted_f1": 0.5556,
+   "unsupported_f1": 0.6364,
+   "misses": 15,
+   "status": "ADAPTED / INTERNAL (human-authored over frozen evidence)"
+  }
+ },
+ "grounding_hallucination": {
+  "n_answers": 30,
+  "n_claims": 106,
+  "support_given_checkable": 0.9896,
+  "contradiction_rate": 0.0,
+  "unsupported_rate": 0.0094,
+  "evidence_supported_answers": 0.9,
+  "any_hallucination_answers": 0.0333,
+  "refusal_precision": 1.0,
+  "refusal_recall": 1.0,
+  "refusal_f1": 1.0,
+  "false_answer_rate_noinfo": 0.0,
+  "citation_precision_positions": 0.9753,
+  "citation_coverage": 0.5312,
+  "failures": [
+   "G2c2 parametric date leak (generation-side; retrieval correct)"
+  ],
+  "refuted_instances": 0,
+  "status": "ADAPTED / INTERNAL (human gold; 30 curated answers)"
+ }
+}

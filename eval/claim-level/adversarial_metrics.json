@@ -1,0 +1,46 @@
+{
+ "tag": "adversarial-43",
+ "n": 43,
+ "accuracy": 0.6512,
+ "per_class": {
+  "SUPPORTED": {
+   "n_gold": 20,
+   "precision": 0.6154,
+   "recall": 0.8,
+   "f1": 0.6957
+  },
+  "REFUTED": {
+   "n_gold": 13,
+   "precision": 1.0,
+   "recall": 0.3846,
+   "f1": 0.5556
+  },
+  "UNSUPPORTED": {
+   "n_gold": 10,
+   "precision": 0.5833,
+   "recall": 0.7,
+   "f1": 0.6364
+  },
+  "NOT_CHECKABLE": {
+   "n_gold": 0,
+   "note": "no gold instances; P/R/F1 not computable"
+  }
+ },
+ "macro_f1_computable_classes": 0.6292,
+ "confusion_true_rows": {
+  "SUPPORTED": {
+   "SUPPORTED": 16,
+   "UNSUPPORTED": 4
+  },
+  "REFUTED": {
+   "SUPPORTED": 7,
+   "REFUTED": 5,
+   "UNSUPPORTED": 1
+  },
+  "UNSUPPORTED": {
+   "UNSUPPORTED": 7,
+   "SUPPORTED": 3
+  },
+  "NOT_CHECKABLE": {}
+ }
+}
