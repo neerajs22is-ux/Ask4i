@@ -137,10 +137,9 @@ export function ArchitectureSection() {
                 className="bg-card hairline rounded-xl border p-4.5 shadow-xs transition-colors hover:border-border"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-2xs font-mono text-muted-foreground uppercase tracking-wide">
+                  <span className="text-2xs font-mono text-muted-foreground uppercase tracking-wider">
                     {metric.badge}
                   </span>
-                  <span className="inline-flex size-2 rounded-full bg-emerald-500" />
                 </div>
                 <div className="mt-2 font-mono text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                   {metric.value}
