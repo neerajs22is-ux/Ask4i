@@ -44,7 +44,7 @@ unverified work as unverified. `ARCHITECTURE.md` Part 2 is historical/superseded
 
 ## 3. Production architecture (current)
 
-Supabase (project `uqlpfgtkmsaexmtieulp`, `ap-southeast-2`) + Edge Functions +
+Supabase (project `<project-ref>`, `ap-southeast-2`) + Edge Functions +
 Voyage `voyage-4` (1024-dim) + AWS Bedrock **Mantle** (`ap-south-1`, exclusive
 generation path). Detail in `ARCHITECTURE.md` Part 1 and §1.16.
 
@@ -504,14 +504,14 @@ each pass (D53).
 - Backend functions are **deployed** (versions in §3; `ask` v51 source was
   reconciled in `d27b057`); the frontend `d27b057` is **deployed on Vercel**.
 - Test account `test@rag.com` is RETIRED — forget it fully. Working admin
-  account is `neeraj2016year@gmail.com` (role admin); password in the Windows
+  account is `admin@example.com` (role admin); password in the Windows
   Credential Manager target `RAG4I_test_user` (read via `eval/wincred.py` as
   `{"email","password"}` JSON). Never print or commit it.
 - **Preflight snapshot (verified 2026-09-29, D59):** HEAD `d27b057`; working
   tree holds one uncommitted refinement (`assistant-message.tsx` badge return)
   plus this doc pass — commit NOT authorized; the CLI (v2.117.0) is
   authenticated (Owner account; `functions list` works) and the project is
-  linked to `uqlpfgtkmsaexmtieulp`; deployed: `ingest-pdf` **v37** ·
+  linked to `<project-ref>`; deployed: `ingest-pdf` **v37** ·
   `embed-worker` **v36** · `query-chunks` **v36** · `ask` **v51** ·
   `storage-cleanup` **v4**, all ACTIVE; production Q/A smoke tests create real
   conversations — delete them afterwards via PostgREST (verified working:

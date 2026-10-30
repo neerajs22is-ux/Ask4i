@@ -13,7 +13,7 @@
 
 **A high-precision, multi-tenant Retrieval-Augmented Generation system that answers strictly from a workspace's verified enterprise documents, validates claims at citation boundaries, and refuses when evidence is insufficient.**
 
-[Live Application](https://ask4i.in) • [Architecture Guide](./ARCHITECTURE.md) • [Decisions Record (D1–D83)](./DECISIONS.md) • [Enterprise Scorecard](./ENTERPRISE_BENCHMARK_SCORECARD.md) • [Penetration Test Report](./PENTAGI_SECURITY_TEST_RESULTS.md)
+[Live Application](https://ask4i.in) • [Architecture Guide](./ARCHITECTURE.md) • [Self-Hosting Guide](./SETUP_GUIDE.md) • [Decisions Record (D1–D83)](./DECISIONS.md) • [Enterprise Scorecard](./ENTERPRISE_BENCHMARK_SCORECARD.md) • [Penetration Test Report](./PENTAGI_SECURITY_TEST_RESULTS.md)
 
 ---
 
@@ -135,13 +135,18 @@ Tested under full grey-box and black-box penetration suites by the **PentAGI Age
 
 ---
 
-## 🚀 Quickstart & Development
+## 🚀 Quickstart & Self-Hosting
+
+Ask4i is 100% self-contained. Anyone who clones this repository can deploy their own instance on free-tier infrastructure without touching, connecting to, or incurring costs on any of the author's resources.
+
+> 📖 **Looking for a complete step-by-step walkthrough?**  
+> See the [**Complete Self-Hosting Guide (SETUP_GUIDE.md)**](./SETUP_GUIDE.md) and [**.env.example**](./.env.example).
 
 ### Prerequisites
 - [Deno](https://deno.land/) (v1.40+)
-- [Node.js](https://nodejs.org/) (v18.17+) & `pnpm` or `npm`
-- [Supabase CLI](https://supabase.com/docs/guides/cli)
-- [Python 3.10+](https://www.python.org/) *(optional, for running evaluation harnesses)*
+- [Node.js](https://nodejs.org/) (v18.17+) & `npm`
+- [Supabase CLI](https://supabase.com/docs/guides/cli) (`npm install -g supabase`)
+- Free accounts on [Supabase](https://supabase.com) and [Jina AI](https://jina.ai) (1M free embedding tokens)
 
 ### 1. Clone & Setup
 ```bash
@@ -149,27 +154,56 @@ git clone https://github.com/neerajs22is-ux/Ask4i.git
 cd Ask4i
 ```
 
-### 2. Run Edge Function Unit Tests
+### 2. Push Database Schema to Your Supabase Project
 ```bash
-# Test evidence reuse invariant logic
-deno test supabase/functions/_shared/evidence-reuse_test.ts
+# Log in and link your own Supabase project (from database.new)
+supabase login
+supabase link --project-ref <your-project-ref>
+
+# Push all 14 migrations (pgvector, tables, RLS, triggers)
+supabase db push
 ```
 
-### 3. Run Claim-Level Verification Harness
+### 3. Set Edge Function Secrets & Deploy
 ```bash
-# Run unit tests for claim decomposition & NLI scoring
-python -m unittest eval/claim-level/test_claim_eval.py
+# Set your server-side provider secrets (kept strictly in Edge vault)
+supabase secrets set \
+  WORKER_CRON_KEY="<random-secret>" \
+  JINA_API_KEY="<your-jina-api-key>" \
+  MANTLE_API_KEY="<your-llm-api-key>" \
+  ANSWER_MODEL_ID="anthropic.claude-3-5-sonnet-20241022-v2:0" \
+  PROVIDER_KILL_SWITCH="false"
+
+# Deploy serverless functions
+supabase functions deploy ask --no-verify-jwt
+supabase functions deploy query-chunks --no-verify-jwt
+supabase functions deploy ingest-pdf --no-verify-jwt
+supabase functions deploy embed-worker --no-verify-jwt
+supabase functions deploy storage-cleanup --no-verify-jwt
+supabase functions deploy edit-message --no-verify-jwt
 ```
 
-### 4. Run the Web Application
+### 4. Configure & Run the Web Application
 ```bash
 cd web
+cp .env.example .env.local
+# Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local
+
 npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to inspect the public landing page or navigate to `/ask` for the authenticated workspace.
+Open [http://localhost:3000](http://localhost:3000) to access the landing page or sign in at `/ask`.
 
-### 5. Interactive Architecture Showcase
+### 5. Run Unit & Evaluation Tests
+```bash
+# Edge function evidence reuse invariants (20/20 passing)
+deno test supabase/functions/_shared/evidence-reuse_test.ts
+
+# Claim decomposition & NLI scoring harness (36/36 passing)
+python -m unittest eval/claim-level/test_claim_eval.py
+```
+
+### 6. Interactive Architecture Showcase
 Open `rag4i-showcase.html` directly in any web browser to explore interactive latency comparisons, zero-GPU ingestion workflows, and grounding metrics.
 
 ---

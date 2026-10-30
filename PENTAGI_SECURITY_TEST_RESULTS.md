@@ -1,7 +1,7 @@
 # PentAGI Security Assessment & Penetration Test Report: ask4i.in
 
 **Target Application:** [ask4i.in](https://ask4i.in)  
-**Backend Infrastructure:** Supabase (`https://uqlpfgtkmsaexmtieulp.supabase.co`)  
+**Backend Infrastructure:** Supabase (`https://<project-ref>.supabase.co`)  
 **Assessment Tool:** PentAGI Specialist Agent Framework  
 **Assessment Date:** October 2026  
 **Overall Security Rating:** **9.5 / 10 (Exceptional)**  
@@ -15,7 +15,7 @@ A comprehensive, two-stage penetration test and security audit was conducted aga
 
 The evaluation was executed in two operational phases:
 1. **Unauthenticated Black-Box Perimeter Audit:** Tested unauthenticated API exposure, storage enumeration, and public data leakage. All unauthenticated probes were successfully neutralized by edge JWT verification and PostgreSQL Row Level Security (RLS).
-2. **Authenticated Grey-Box In-Depth Audit:** Executed under legitimate session authentication (`neeraj2016year@gmail.com`, tenant `aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa`). Verified cross-tenant isolation, database write integrity, prompt injection robustness, and token revocation.
+2. **Authenticated Grey-Box In-Depth Audit:** Executed under legitimate session authentication (`audit-user@example.com`, tenant `aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa`). Verified cross-tenant isolation, database write integrity, prompt injection robustness, and token revocation.
 
 Across both phases, the platform demonstrated an **exceptional defense-in-depth posture**, with database-level state machine triggers preventing vector poisoning and strict edge-level tenant binding preventing cross-tenant context leakage.
 
@@ -43,7 +43,7 @@ Across both phases, the platform demonstrated an **exceptional defense-in-depth 
 ## 3. Detailed Phase 1: Unauthenticated Perimeter Assessment
 
 ### 3.1 Network & HTTP Header Analysis
-* **Host / DNS:** Resolved to `216.198.79.1` (Vercel edge hosting Next.js SPA).
+* **Host / DNS:** Resolved to Vercel Anycast Edge CDN (hosting Next.js SPA).
 * **Security Headers:**
   * `Strict-Transport-Security` (HSTS): Enabled.
   * `X-Frame-Options: DENY`: Prevents clickjacking.
@@ -72,8 +72,8 @@ Across both phases, the platform demonstrated an **exceptional defense-in-depth 
 ## 4. Detailed Phase 2: Authenticated Deep Penetration Test
 
 **Session Context:**
-* **Authenticated User:** `neeraj2016year@gmail.com`
-* **User UUID:** `d64b9a09-ae69-4fcc-b6cf-3b04b6e3f602`
+* **Authenticated User:** `audit-user@example.com`
+* **User UUID:** `00000000-0000-0000-0000-000000000001`
 * **Assigned Tenant ID:** `aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa`
 * **JWT Properties:** ES256 cryptographically signed, 1-hour expiration lifespan, `aal1` assurance level, bound to server-side `session_id`.
 

@@ -1,6 +1,7 @@
 # Local-only credential/session material. Never commit secrets, tokens, or keys.
 .env
 .env.*
+!.env.example
 .eval-session.json
 token.txt
 keys.json
@@ -22,10 +23,10 @@ brag-output-*/
 .vibe-wise/
 
 # Personal career / resume working artifacts (kept local)
-CV_NEERAJ_SHIVKUMAR.md
-NEERAJ_SHIVKUMAR_RESUME*
-generate_resume_docs.py
-resume_template.html
+CV_NEERAJ*
+*NEERAJ_SHIVKUMAR*
+*resume*
+generate_*resume*
 interview-deck/
 # Repository boundary: the research corpus, uploaded test data and generated
 # evaluation run artifacts are NOT published (they can embed source passage

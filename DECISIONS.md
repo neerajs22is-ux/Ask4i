@@ -852,7 +852,7 @@ assumption
   "no deploy credentials", inherited from the older B3/B6 note "the project is
   not linked". The 2026-09-17 preflight disproved it — CLI v2.117.0 present and
   authenticated through the Windows Credential Manager token, project linked to
-  `uqlpfgtkmsaexmtieulp`, read access proven by `supabase functions list`
+  `<project-ref>`, read access proven by `supabase functions list`
   (`ingest-pdf` 33 · `embed-worker` 29 · `query-chunks` 29 · `ask` 38 ·
   `storage-cleanup` 1, all ACTIVE; `embed-worker` `verify_jwt=false`).
   Deployment permission remains **unverified** (no CLI dry-run exists; no

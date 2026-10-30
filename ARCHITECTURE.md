@@ -373,7 +373,7 @@ Cron-driven embed-worker resume. Full audit: `eval/runs/diagnostic-3d2.md`.
 
 ## 1.15 Deployment state
 
-- Supabase project ref `uqlpfgtkmsaexmtieulp`, region `ap-southeast-2`.
+- Supabase project ref `<project-ref>`, region `ap-southeast-2`.
 - AWS Bedrock Mantle region `ap-south-1`; Jina server-side.
 - Deployed and ACTIVE (observed 2026-10-04 via `functions list` — note: the
   platform redeployed all functions twice after secret rotations, so versions
